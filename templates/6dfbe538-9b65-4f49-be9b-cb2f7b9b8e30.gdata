@@ -1,0 +1,191 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfContainer_template(6dfbe538-9b65-4f49-be9b-cb2f7b9b8e30)
+{
+	name: "TGameFrame"
+	structure: GtfContainer(1700d9dd-c3e9-4fa2-ae2b-3fb8a366d918)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfContainer_template_instance(f8322527-3192-4510-972b-8654e5d2c580)
+			{
+				name: "Header"
+				template: @82419cda-fffd-4141-9e1a-f3185eed7de5 (objectref<GtfContainer_template>)
+				children: children_list []
+			}, 
+			GtfImage(c5f27271-1826-4e8f-a095-d6991cd6195d)
+			{
+				features: feature_list [
+					ScaleMode(83c7b77d-2501-4a8c-8660-a790e95367a9)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "frame"
+				visible: true
+				width: @e65b3dd6-64d9-48e9-8448-752aa0fd1551 (objectref<int>)
+				height: @1b5b1b6d-c061-4c9d-974d-d97c6d68389b (objectref<int>)
+				x: 10
+				y: 100
+				image: image_resource(6685bfe8-bf02-43d1-bb7e-7519c1b4f93a)
+				{
+					file: "images\\frame.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfImage(cf8c4eab-cf95-44e4-9178-6030a74716f8)
+			{
+				features: feature_list [
+					ScaleMode(39e26bd7-c32f-4d8d-b4cc-32a45a743cce)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "frameBG"
+				visible: true
+				width: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
+				height: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
+				x: 45
+				y: 136
+				image: image_resource(d1dc68af-1eff-4470-aed9-fdf27fd44226)
+				{
+					file: "images\\framebg.png"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfImage(bc43de42-5e3d-4093-9195-b2404305c974)
+			{
+				features: feature_list [
+					ScaleMode(ec467a50-81cf-4d93-bff1-c413068bd1c6)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "grid"
+				visible: true
+				width: width@cf8c4eab-cf95-44e4-9178-6030a74716f8 (propref<int>)
+				height: height@cf8c4eab-cf95-44e4-9178-6030a74716f8 (propref<int>)
+				x: x@cf8c4eab-cf95-44e4-9178-6030a74716f8 (propref<int>)
+				y: y@cf8c4eab-cf95-44e4-9178-6030a74716f8 (propref<int>)
+				image: image_resource(2dd08e5c-e6c6-4199-ac27-6be219059488)
+				{
+					file: "images\\grid.png"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfImage(91bf612e-0f62-4234-a16b-86f9b304cd8e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "outArea"
+				visible: true
+				width: 38
+				height: 69
+				x: 453
+				y: 270
+				image: image_resource(7b215988-8f88-4703-90a2-39cea587068f)
+				{
+					file: "images\\game_bg.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfImage(aa1592b2-3d80-4d3d-b12a-9edf60b29fce)
+			{
+				features: feature_list [
+					ScaleMode(213af4e0-1d84-4512-b7cc-3f3f7de33cc9)
+					{
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfParallelAnimation(c04fdaf3-a14f-46d1-8129-62023744205f)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(08b0759b-eb33-4c95-871e-62e848389b59)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 2"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 0
+								alternating: true
+								relative: false
+								start: 448
+								end: 455
+								target: x@aa1592b2-3d80-4d3d-b12a-9edf60b29fce (propref<int>)
+							}]
+						name: "Animation 1"
+						enabled: true
+						repeat: 0
+						alternating: true
+						scale: 1F
+						onPlay: function<void,int,bool>(3eb0c01b-f65c-49ab-9e68-56ddb3565590)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(a74b0c2c-4eb0-41ed-99c2-0c61a43ab21f)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(8c0d41f3-7633-467a-b12a-5b7285ec9af7)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "outArrow"
+				visible: true
+				width: 20
+				height: 30
+				x: 448
+				y: 290
+				image: image_resource(1ba9e4f3-3a4f-47a2-97cd-cd54bb79237a)
+				{
+					file: "images\\out.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				startAnim: conditional_script(30b995fe-ebd4-46a8-95df-f2b80c4afab4)
+				{
+					triggerList: trigger_list(9b93df68-0cfa-44dc-a882-267c987ff278)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(fdad43fe-a2b7-406f-addd-cf8832d8e7e4)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	f:animation_play(v:this->\"Animation 1\")" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "GameFrame"
+		visible: true
+		width: @6cc24569-13be-4101-991f-a4441cb7eaae (objectref<int>)
+		height: @4f1945d3-de12-40f5-8959-01246f9f8e46 (objectref<int>)
+		x: 0
+		y: 10
+	}
+	x: x@aa1592b2-3d80-4d3d-b12a-9edf60b29fce (propref<int>)
+}

@@ -1,0 +1,66 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfImage_template(a8e72a68-b1f9-4b44-a7aa-65cfdfe7fb4f)
+{
+	name: "TArrow"
+	structure: GtfImage(a5242002-b7a6-430c-8c00-dbf75791258b)
+	{
+		features: feature_list [
+			ScaleMode(5e9aafe8-9b69-4e21-80e1-97d8f8d75205)
+			{
+				scaleMode: 1
+			}, 
+			TouchShortReleased(2cd70f34-d508-44b7-a044-0e8d2d47aa83)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(65937b79-889c-4a55-8884-0ac932e465a3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(5c622be9-7189-4029-af67-312df41f8903)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list []
+		name: "arrow"
+		visible: false
+		width: 50
+		height: 50
+		x: 0
+		y: 0
+		image: image_resource(d3f5619d-cef6-4154-a959-133a48ac2bfe)
+		{
+			file: "images\\upArrow.png"
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+		ArrowType: 0
+		setImage: conditional_script(4058ff66-6a4a-43c5-9e5f-9e3dafc52a8d)
+		{
+			triggerList: trigger_list(15a4ea67-450a-4a34-8e73-237513785a3b)
+			{
+				script: "v:this.ArrowType"
+			}
+			onTrigger: function<bool,bool>(13d6d23e-70c8-45c1-b3cb-ae79922d7898)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.image = dp:arrowList[v:this.ArrowType]" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	ArrowType: ArrowType@a5242002-b7a6-430c-8c00-dbf75791258b (propref<int>)
+	x: x@a5242002-b7a6-430c-8c00-dbf75791258b (propref<int>)
+	y: y@a5242002-b7a6-430c-8c00-dbf75791258b (propref<int>)
+	touchShortReleased: touchShortReleased@2cd70f34-d508-44b7-a044-0e8d2d47aa83 (propref<function<bool,int,int,int,int>>)
+	visible: visible@a5242002-b7a6-430c-8c00-dbf75791258b (propref<bool>)
+}

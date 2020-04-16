@@ -1,0 +1,36 @@
+EBGUIDE 6.8.0.190612124148;
+
+events(b3fb9e35-aa0f-466d-b88f-cd02b7624c81)
+{
+	items: event_list [
+		event(08ff7281-a64f-4705-b6fa-5c7717f4b0a2)
+		{
+			name: "moveRight"
+			eventId: 1
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(28dd5da3-d16c-41c2-8df2-36f63238145c)
+		{
+			name: "moveUp"
+			eventId: 2
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(9eb5b89a-b749-44e7-af43-62688796eb45)
+		{
+			name: "moveDown"
+			eventId: 3
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(cec548f0-8053-49be-9a9e-7af98e864b0e)
+		{
+			name: "moveLeft"
+			eventId: 0
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(cf6ec5ca-94e3-40bf-9948-500c1f698033)
+		{
+			name: "starLevel"
+			eventId: 4
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}]
+}

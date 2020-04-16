@@ -1,0 +1,31 @@
+EBGUIDE 6.8.0.190612124148;
+
+event_groups(f1336d09-aa01-42a6-a9b3-c0bc132d8290)
+{
+	items: event_group_list [
+		event_group(b058f691-fff9-4ca1-97fc-eaa7b219e97c)
+		{
+			name: "Default"
+			event_group_id: 2
+		}, 
+		event_group(75339cb8-7c6a-4b0b-8698-afc5a56bde2e)
+		{
+			name: "Key"
+			event_group_id: 10
+		}, 
+		event_group(b5c12663-d413-43ba-911f-a5406760da2c)
+		{
+			name: "Touch"
+			event_group_id: 11
+		}, 
+		event_group(acb36b26-d69b-4b0c-9f23-772e2fa4f531)
+		{
+			name: "Rotary"
+			event_group_id: 12
+		}, 
+		event_group(3e8ef7e2-f1c8-458e-9774-eb5331db7bb0)
+		{
+			name: "System notification"
+			event_group_id: 13
+		}]
+}

@@ -1,0 +1,130 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(f6269d6a-f636-494d-b06e-c59b59dcdd2f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(f64533af-7a24-4ee2-b9ec-87dd6f859c6e)
+		{
+			name: "GameBg 1"
+			template: @e9a2c2e3-bea5-4b34-be0b-ec31b1f043bd (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(76a067e6-0f7e-46d7-bd2b-547eadeb10d2)
+				{
+					name: "GameFrame 1"
+					template: @6dfbe538-9b65-4f49-be9b-cb2f7b9b8e30 (objectref<GtfContainer_template>)
+					children: children_list [
+						GtfContainer_template_instance(a24d7573-7b7c-4234-8a6e-d92e2f32963c)
+						{
+							name: "GameArea 1"
+							template: @d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3 (objectref<GtfContainer_template>)
+							children: children_list [
+								GtfContainer_template_instance(0e7da8b8-6a77-4d22-ba66-28afd81ee610)
+								{
+									name: "mainBlock"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 1
+									rowNo: 2
+									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: TypeOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+								}, 
+								GtfContainer_template_instance(b3539e80-fd30-4863-aab6-034ee51854dc)
+								{
+									name: "VBlock1"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 3
+									rowNo: rowNo@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									LengthOfBlock: 1
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(4434d06d-dfa0-48a9-8140-1a29ecad8fc8)
+								{
+									name: "VBlock2"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 4
+									rowNo: 1
+									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(52f0ebb8-2c90-4f6e-9ec7-c3d32eac9fdb)
+								{
+									name: "VBlock3"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 2
+									rowNo: 3
+									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(7b16c710-d9a3-43bd-a4fa-2e6ba2a4fe21)
+								{
+									name: "HBlock"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 3
+									rowNo: 3
+									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 1
+								}]
+						}]
+					x: x@6dfbe538-9b65-4f49-be9b-cb2f7b9b8e30 (propref<int>)
+				}]
+		}]
+	name: "SplashScreen"
+	visible: true
+	width: 500
+	height: 600
+	x: 0
+	y: 0
+	resetValues: conditional_script(6077e3dd-fe57-46e5-865f-7c02b13ca1f2)
+	{
+		triggerList: trigger_list(bd83bf49-fe22-41d5-9a04-66cc458b795d)
+		{
+			script: "ev:starLevel"
+		}
+		onTrigger: function<bool,bool>(4c11a413-7a5c-41a2-abee-a231e048faa2)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	if(!v:arg0){" \
+				"		match_event v:event = ev:starLevel in" \
+				"		{" \
+				"			let v:i = 0" \
+				"			in" \
+				"			{" \
+				"				while( v:i < dp:GridSize * dp:GridSize ) " \
+				"				{" \
+				"					dp:currentGrid[v:i] = false" \
+				"					v:i += 1;" \
+				"				}" \
+				"				" \
+				"				dp:currentLevelBlockTypeList =  dp:Level0_BlockList" \
+				"				dp:currentLevelBlockRowList = dp:Level0_BlockRowList" \
+				"				dp:currentLevelBlockColumnList = dp:Level0_BlockColumnList		" \
+				"			}" \
+				"		}" \
+				"	}" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+}

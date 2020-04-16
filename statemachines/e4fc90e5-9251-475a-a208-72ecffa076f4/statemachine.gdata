@@ -1,0 +1,55 @@
+EBGUIDE 6.8.0.190612124148;
+
+haptic_statemachine(e4fc90e5-9251-475a-a208-72ecffa076f4)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(4f4c9fdf-23ae-4582-adae-d58ab38aea0f)
+		{
+			x: 92
+			y: 61
+			width: 100
+			height: 100
+			name: "vsSplashScreen"
+			entry_action: function<void>(ab93a2cf-6852-4269-9b02-52072b5212ce)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:starLevel()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (f6269d6a-f636-494d-b06e-c59b59dcdd2f)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(fa972ed8-66cf-4002-9937-07954d6a4fa0)
+	{
+		x: 20
+		y: 36
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(46ef2a33-7c19-41c3-ae5f-f58a5d11730c)
+		{
+			action: function<void>(none)
+			target_state: @4f4c9fdf-23ae-4582-adae-d58ab38aea0f (objectref<haptic_dialog_state>)
+			source_dock: 0.196725F
+			target_dock: 0.8573405F
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

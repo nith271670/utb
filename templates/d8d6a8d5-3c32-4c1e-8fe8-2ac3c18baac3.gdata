@@ -1,0 +1,52 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfContainer_template(d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3)
+{
+	name: "TGameArea"
+	structure: GtfContainer(2d629213-e0f9-47bf-9905-4735d255b76d)
+	{
+		features: feature_list [
+			StateFocused(19a8645f-94d5-4000-a92e-5ac6cbc1aefa)
+			{
+				focusable: 3
+				focused: false
+			}, 
+			AutoFocus(a863221d-474d-40b0-b84f-e2eeb011ca83)
+			{
+				initFocus: 0
+				focusedIndex: 0
+				focusNext: false
+				focusPrev: false
+				focusFlow: 1
+			}, 
+			KeyShortReleased(7e7cb0db-d13d-4c72-a0bb-e9ce0ba452fd)
+			{
+				keyShortReleased: function<bool,int>(edded5e0-7d72-46f2-b184-028b4d5301a2)
+				{
+					script: "function(v:keyId::int)" \
+						"{" \
+						"	f:trace_string(f:int2string(v:keyId))" \
+						"	if(v:keyId ==134){" \
+						"		f:focusPrevious()" \
+						"	}" \
+						"	" \
+						"	if(v:keyId == 135 || v:keyId ==129){" \
+						"		f:focusNext()" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StatePressed(2c6c19ac-c53d-4426-9f70-d6aca853806a)
+			{
+				pressed: false
+			}]
+		children: children_list []
+		name: "GameArea"
+		visible: true
+		width: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
+		height: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
+		x: 45
+		y: 136
+	}
+}

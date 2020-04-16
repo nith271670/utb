@@ -1,0 +1,31 @@
+EBGUIDE 6.8.0.190612124148;
+
+project(101bbf92-b464-4b3d-a252-79e229e88f9b)
+{
+	rootNamespace: namespace(f9206e0b-7cd6-4432-a5fc-9b04c1c57aea)
+	{
+		name: ""
+		namespaces: namespaces []
+		events: (b3fb9e35-aa0f-466d-b88f-cd02b7624c81)
+		statemachines: statemachines [
+			(e4fc90e5-9251-475a-a208-72ecffa076f4)]
+		dp_items: (f2495cc9-6512-4cf8-8520-bd30d992dd23)
+		templates: templates [
+			(e9a2c2e3-bea5-4b34-be0b-ec31b1f043bd), 
+			(6dfbe538-9b65-4f49-be9b-cb2f7b9b8e30), 
+			(82419cda-fffd-4141-9e1a-f3185eed7de5), 
+			(a544eead-a7c5-47f7-920e-bbde213d64fc), 
+			(d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3), 
+			(a8e72a68-b1f9-4b44-a7aa-65cfdfe7fb4f)]
+		view_transition_animation_configurations: view_transition_animation_configurations []
+	}
+	contexts: (1b684a3e-fc7d-474f-a5d6-9331da7693d0)
+	languages: (2f887d83-b9b1-4f6a-b16b-57718f115cac)
+	skins: (d3f224da-82dd-4eb1-af05-5031185ff7b4)
+	event_groups: (f1336d09-aa01-42a6-a9b3-c0bc132d8290)
+	profiles: profiles [
+		(b353c849-223f-4ce1-8f40-46ebcd0ba0ac), 
+		(4e28d7c0-328c-494f-bbf3-81cb825caa7c)]
+	editModeConfigurationProfile: @b353c849-223f-4ce1-8f40-46ebcd0ba0ac (objectref<configuration_profile>)
+	simulationModeConfigurationProfile: @4e28d7c0-328c-494f-bbf3-81cb825caa7c (objectref<configuration_profile>)
+}

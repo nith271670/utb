@@ -1,0 +1,39 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfContainer_template(e9a2c2e3-bea5-4b34-be0b-ec31b1f043bd)
+{
+	name: "TGameBg"
+	structure: GtfContainer(3415726e-4fdf-4f6d-ba98-e57a7c292b5f)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(f8917998-7d21-4acd-8faa-3bd8efeee287)
+			{
+				features: feature_list [
+					ScaleMode(463b3f8e-62d1-4ff6-922b-1830312eb167)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "bg_img"
+				visible: true
+				width: width@3415726e-4fdf-4f6d-ba98-e57a7c292b5f (propref<int>)
+				height: height@3415726e-4fdf-4f6d-ba98-e57a7c292b5f (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(c749871e-23a2-4709-8475-57f92d189f2e)
+				{
+					file: "images\\game_bg.png"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "GameBG"
+		visible: true
+		width: @6cc24569-13be-4101-991f-a4441cb7eaae (objectref<int>)
+		height: @4f1945d3-de12-40f5-8959-01246f9f8e46 (objectref<int>)
+		x: 0
+		y: 0
+	}
+}
