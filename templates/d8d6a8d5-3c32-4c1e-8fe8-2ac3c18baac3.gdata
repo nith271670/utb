@@ -48,5 +48,45 @@ GtfContainer_template(d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3)
 		height: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
 		x: 45
 		y: 136
+		initializeGameArea: conditional_script(af9dd521-cd51-4903-9658-8dc93d976a7c)
+		{
+			triggerList: trigger_list(9587fefa-5f6f-4503-852e-35561e95956c)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(360142d5-5f42-4ddf-b66d-fb5e2b0e9bf4)
+			{
+				script: "function(v:arg0::bool)" \
+					"{	" \
+					"	f:ext_listClear(&dp:currentGrid)" \
+					"	f:ext_listClear(&dp:currentBlockRowList)" \
+					"	f:ext_listClear(&dp:currentBlockColumnList)" \
+					"	dp:N_Moves = 0" \
+					"	let v:i = 0" \
+					"	in" \
+					"	{" \
+					"		while( v:i < dp:GridSize * dp:GridSize) " \
+					"		{" \
+					"			f:ext_listAppend_Bool(&dp:currentGrid,false)" \
+					"			v:i+=1" \
+					"		}" \
+					"		" \
+					"		f:trace_string(\"GameArea\")" \
+					"		dp:NumBlocks = f:ext_widgetGetVisibleChildCount(v:this)" \
+					"		v:i = 0" \
+					"		while( v:i < dp:NumBlocks) " \
+					"		{" \
+					"			f:ext_listAppend_Int32(&dp:currentBlockRowList, 0)" \
+					"			f:ext_listAppend_Int32(&dp:currentBlockColumnList, 0)" \
+					"			v:i+=1" \
+					"		}" \
+					"	" \
+					"	}" \
+					"		" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}
 	}
 }

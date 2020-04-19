@@ -1,0 +1,259 @@
+EBGUIDE 6.8.0.190612124148;
+
+haptic_compound_state(4d255141-074f-4e8f-be95-5affdcfab0cd)
+{
+	x: 382
+	y: 30
+	width: 625
+	height: 440
+	name: "csLevels"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions [
+		haptic_transition(809956d1-2ffc-43b7-9c59-9f688e47004d)
+		{
+			event: @de6f163b-cdc1-42e9-b98b-b3b948dabebe (objectref<event>)
+			condition: function<bool>(none)
+			action: function<void>(none)
+			target_state: @e70e677a-03ab-44d7-8607-33615bd850f6 (objectref<haptic_choice_state>)
+			source_dock: 0.003040807F
+			target_dock: 0.924683F
+		}, 
+		haptic_transition(d9ccb028-b839-4e6b-b782-c19a8381f705)
+		{
+			event: @69a127da-843b-45b8-bfac-0f5a153cc4bd (objectref<event>)
+			condition: function<bool>(none)
+			action: function<void>(none)
+			target_state: @efdb32e1-4aed-473f-864a-d644e621271e (objectref<haptic_dialog_state>)
+			source_dock: 0.2605733F
+			target_dock: 0.9217954F
+		}]
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(66b2ae63-21e3-4973-b361-17b0a456122b)
+		{
+			x: 101
+			y: 7
+			width: 100
+			height: 100
+			name: "vsLevel1"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(51954c6a-3fb8-45a6-8f62-f0c8feedc56b)
+				{
+					event: @d7050340-13e9-4d8c-a032-5f0ef357ca60 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(328bbbdb-c03b-4d5f-a1ec-e50a2b6fcc04)
+					{
+						script: "function()" \
+							"{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:LevelComplete,0)" \
+							"}"
+					}
+				}]
+			background_color: #6C6C6CFF
+			dialog: (babdd470-a969-42e1-8b0b-b1c6d5dad70f)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_choice_state(e70e677a-03ab-44d7-8607-33615bd850f6)
+		{
+			x: 290
+			y: 168
+			width: 100
+			height: 100
+			name: "Choice state 1"
+			choice_transitions: haptic_choice_transitions [
+				haptic_choice_transition(dfa210ee-93c1-4bae-9e2b-ef7498e5c134)
+				{
+					condition: function<bool>(2ab92d7f-607d-4a0b-a614-57d80bad043d)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:levelNo == 1" \
+							"}"
+					}
+					action: function<void>(none)
+					target_state: @66b2ae63-21e3-4973-b361-17b0a456122b (objectref<haptic_dialog_state>)
+					source_dock: 0.9321001F
+					target_dock: 0.4360865F
+				}, 
+				haptic_choice_transition(59bef279-18e3-4e49-87b3-5950824ca9f9)
+				{
+					condition: function<bool>(081907ba-f334-4044-95d7-df06669475d9)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:levelNo == 2" \
+							"}"
+					}
+					action: function<void>(none)
+					target_state: @53714d81-f26e-442a-8ac1-f9d10ee38690 (objectref<haptic_dialog_state>)
+					source_dock: 0.187833F
+					target_dock: 0.614529F
+				}, 
+				haptic_choice_transition(10df4af0-c7ec-4901-9b03-b9c758a94dcd)
+				{
+					condition: function<bool>(a0373714-1485-4946-9166-36f7ce5cd5b9)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:levelNo == 3" \
+							"}"
+					}
+					action: function<void>(none)
+					target_state: @bb71c9ee-4165-47a2-a2f0-8647f654e289 (objectref<haptic_dialog_state>)
+					source_dock: 0.3123799F
+					target_dock: 0.8260946F
+				}, 
+				haptic_choice_transition(5445c3a4-b533-4d88-b488-f358018a5092)
+				{
+					condition: function<bool>(512e67cb-e2bf-4d38-8cb1-efc09d848c72)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:levelNo == 4" \
+							"}"
+					}
+					action: function<void>(none)
+					target_state: @d7d4f426-c1ba-48cb-bbc5-dafbf2a3cc16 (objectref<haptic_dialog_state>)
+					source_dock: 0.5303394F
+					target_dock: 0.975988F
+				}]
+			else_transition: haptic_default_transition(2d8663e2-f593-4850-9047-862946ccef98)
+			{
+				action: function<void>(none)
+				target_state: @1c1914d7-6fbf-4805-8a33-79752264dfed (objectref<haptic_dialog_state>)
+				source_dock: 0.7076247F
+				target_dock: 0.2318894F
+			}
+		}, 
+		haptic_dialog_state(53714d81-f26e-442a-8ac1-f9d10ee38690)
+		{
+			x: 371
+			y: 18
+			width: 100
+			height: 100
+			name: "vsLevel2"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(c0328797-44c2-432b-a8e8-2c486867e90f)
+				{
+					event: @d7050340-13e9-4d8c-a032-5f0ef357ca60 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(5b26701c-8713-4097-9d64-ff2cb69e439f)
+					{
+						script: "function()" \
+							"{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:LevelComplete,0)" \
+							"}"
+					}
+				}]
+			background_color: #6C6C6CFF
+			dialog: (eb334ace-e017-408e-b23c-6e9123e1660e)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(bb71c9ee-4165-47a2-a2f0-8647f654e289)
+		{
+			x: 440
+			y: 180
+			width: 100
+			height: 100
+			name: "vsLevel3"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(73883053-6636-4a5f-bbb9-2931d587b366)
+				{
+					event: @d7050340-13e9-4d8c-a032-5f0ef357ca60 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(57890043-0657-40f6-abcd-241cb1c15d3f)
+					{
+						script: "function()" \
+							"{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:LevelComplete,0)" \
+							"}"
+					}
+				}]
+			background_color: #6C6C6CFF
+			dialog: (e5dadc3e-d693-4235-955f-6ab823e91bfa)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(d7d4f426-c1ba-48cb-bbc5-dafbf2a3cc16)
+		{
+			x: 251
+			y: 280
+			width: 100
+			height: 100
+			name: "vsLevel4"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(10a74940-f417-4325-9e4a-ab6716238fab)
+				{
+					event: @d7050340-13e9-4d8c-a032-5f0ef357ca60 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(b24569c6-cfff-4e8b-90fe-ed79a19209a1)
+					{
+						script: "function()" \
+							"{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:LevelComplete,0)" \
+							"}"
+					}
+				}]
+			background_color: #6C6C6CFF
+			dialog: (fdbcd382-76a9-43be-969b-3e3966556b0b)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(1c1914d7-6fbf-4805-8a33-79752264dfed)
+		{
+			x: 35
+			y: 159
+			width: 100
+			height: 100
+			name: "vsLevel5"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(5f248a7d-ee17-4304-b845-8e7471c8ae4b)
+				{
+					event: @d7050340-13e9-4d8c-a032-5f0ef357ca60 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(2e98157a-b446-44b7-b766-35904012e86c)
+					{
+						script: "function()" \
+							"{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main,sm:GameOver,0)" \
+							"}"
+					}
+				}]
+			background_color: #6C6C6CFF
+			dialog: (d967e011-333e-4d04-b2a3-838ad20ab99a)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(a7c9788e-ff95-4e9a-ae45-a86bf3e939ed)
+	{
+		x: 311
+		y: 89
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(9985c82e-03eb-4eee-a371-5a853e6fa4f9)
+		{
+			action: function<void>(none)
+			target_state: @e70e677a-03ab-44d7-8607-33615bd850f6 (objectref<haptic_choice_state>)
+			source_dock: 0.5734162F
+			target_dock: 0.03556741F
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

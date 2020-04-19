@@ -8,7 +8,12 @@ project(101bbf92-b464-4b3d-a252-79e229e88f9b)
 		namespaces: namespaces []
 		events: (b3fb9e35-aa0f-466d-b88f-cd02b7624c81)
 		statemachines: statemachines [
-			(e4fc90e5-9251-475a-a208-72ecffa076f4)]
+			(e4fc90e5-9251-475a-a208-72ecffa076f4), 
+			(e906b380-433b-4f69-8e54-a977f3f72cf2), 
+			(b7a85b5a-5b17-4704-aae5-05afc4391249), 
+			(d5eb648c-f3cd-4bb3-b9ba-59b47f7a6b9e), 
+			(983ef4b4-5504-468c-b23b-8dd28562fe5e), 
+			(7565a094-2191-45c5-a4fe-4f1410d23692)]
 		dp_items: (f2495cc9-6512-4cf8-8520-bd30d992dd23)
 		templates: templates [
 			(e9a2c2e3-bea5-4b34-be0b-ec31b1f043bd), 
@@ -16,7 +21,8 @@ project(101bbf92-b464-4b3d-a252-79e229e88f9b)
 			(82419cda-fffd-4141-9e1a-f3185eed7de5), 
 			(a544eead-a7c5-47f7-920e-bbde213d64fc), 
 			(d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3), 
-			(a8e72a68-b1f9-4b44-a7aa-65cfdfe7fb4f)]
+			(a8e72a68-b1f9-4b44-a7aa-65cfdfe7fb4f), 
+			(51008dcf-a992-4b93-ae18-0cd0b5cb72fc)]
 		view_transition_animation_configurations: view_transition_animation_configurations []
 	}
 	contexts: (1b684a3e-fc7d-474f-a5d6-9331da7693d0)

@@ -172,6 +172,52 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 				x: 0
 				y: 0
 				fillColor: #FFFFFF00
+			}, 
+			GtfParallelAnimation(a860ca07-1836-474d-9d4e-9210e9daf623)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(124db7ec-8ff9-402f-8949-077a5cea7aff)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "levelComplete"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 272
+						end: 470
+						target: x@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
+					}]
+				name: "Animation 2"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(1d07f3ce-fc7a-4945-9c24-fbcdf1212664)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(f9f8e467-48e7-4a77-81be-8f51cd1010dd)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(2ceaf1d0-1e6a-48cf-9ade-f47113678fad)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"	fire_delayed 500, ev:levelComplete()" \
+						"}"
+				}
 			}]
 		name: "gameBlock"
 		visible: true
@@ -229,41 +275,84 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 			{
 				script: "function(v:arg0::bool)" \
 					"{" \
-					"	if(v:this.columnNo<0){" \
-					"		v:this.columnNo = 0" \
-					"	}" \
-					"	" \
-					"	if(v:this.rowNo<0){" \
-					"		v:this.rowNo = 0" \
-					"	}" \
-					"	" \
-					"	if(v:this.TypeOfBlock == 2){" \
-					"		if(v:this.rowNo>=(dp:GridSize - 2) && v:this.LengthOfBlock != 0){" \
-					"			v:this.rowNo = dp:GridSize - 3" \
-					"		}" \
-					"		else if(v:this.rowNo>=(dp:GridSize - 1) && v:this.LengthOfBlock == 0){" \
-					"			v:this.rowNo = dp:GridSize - 2" \
-					"		}" \
+					"	let v:temp_x = v:this.x" \
+					"		v:temp_y = v:this.y" \
+					"		v:index = 0" \
+					"	in" \
+					"	{	" \
 					"		" \
-					"		if(v:this.columnNo>(dp:GridSize - 1)){" \
-					"			v:this.columnNo = dp:GridSize - 1" \
-					"		}" \
-					"	}" \
-					"	else if(v:this.TypeOfBlock == 0 || v:this.TypeOfBlock == 1){" \
-					"		if(v:this.columnNo>=(dp:GridSize - 2) && v:this.LengthOfBlock != 0){" \
-					"			v:this.columnNo = dp:GridSize - 3" \
-					"		}" \
-					"		else if(v:this.columnNo>=(dp:GridSize - 1) && v:this.LengthOfBlock == 0){" \
-					"			v:this.columnNo = dp:GridSize - 2" \
-					"		}" \
 					"		" \
-					"		if(v:this.rowNo>(dp:GridSize - 1)){" \
-					"			v:this.rowNo = dp:GridSize - 1" \
+					"		v:this.x = dp:blockDimensions * v:this.columnNo" \
+					"		v:this.y = dp:blockDimensions * v:this.rowNo" \
+					"		" \
+					"		if(v:temp_x != v:this.x || v:temp_y != v:this.y){" \
+					"			" \
+					"			f:trace_string(\"blcok moved\")" \
+					"			" \
+					"			if(v:this.moveDirection > 0)" \
+					"				dp:N_Moves += 1" \
+					"				" \
+					"			v:index = v:this.columnNo + dp:GridSize * v:this.rowNo" \
+					"			" \
+					"			if(v:this.TypeOfBlock == 0 || (v:this.TypeOfBlock == 1 && v:this.LengthOfBlock == 0)){" \
+					"				dp:currentGrid[v:index] = true" \
+					"				dp:currentGrid[v:index + 1] = true" \
+					"				" \
+					"				if(v:this.moveDirection == 2){" \
+					"					dp:currentGrid[v:index + 2] = false" \
+					"				}" \
+					"				else if(v:this.moveDirection == 3){" \
+					"					dp:currentGrid[v:index - 1] = false" \
+					"				}" \
+					"				" \
+					"			}" \
+					"			else if(v:this.TypeOfBlock == 1 && v:this.LengthOfBlock != 0){" \
+					"				dp:currentGrid[v:index] = true" \
+					"				dp:currentGrid[v:index + 1] = true" \
+					"				dp:currentGrid[v:index + 2] = true" \
+					"				" \
+					"				if(v:this.moveDirection == 2){" \
+					"					dp:currentGrid[v:index + 3] = false" \
+					"				}" \
+					"				else if(v:this.moveDirection == 3){" \
+					"					dp:currentGrid[v:index - 1] = false" \
+					"				}" \
+					"			}" \
+					"			else if(v:this.TypeOfBlock == 2 && v:this.LengthOfBlock == 0){" \
+					"				dp:currentGrid[v:index] = true" \
+					"				dp:currentGrid[v:index + dp:GridSize] = true" \
+					"				" \
+					"				if(v:this.moveDirection == 0){" \
+					"					dp:currentGrid[v:index + dp:GridSize * 2] = false" \
+					"				}" \
+					"				else if(v:this.moveDirection == 1){" \
+					"					dp:currentGrid[v:index - dp:GridSize] = false" \
+					"				}" \
+					"			}" \
+					"			else if(v:this.TypeOfBlock == 2 && v:this.LengthOfBlock != 0){" \
+					"				dp:currentGrid[v:index] = true" \
+					"				dp:currentGrid[v:index + dp:GridSize] = true" \
+					"				dp:currentGrid[v:index + dp:GridSize * 2] = true" \
+					"				if(v:this.moveDirection == 0){" \
+					"					dp:currentGrid[v:index + dp:GridSize * 3] = false" \
+					"				}" \
+					"				else if(v:this.moveDirection == 1){" \
+					"					dp:currentGrid[v:index - dp:GridSize] = false" \
+					"				}" \
+					"			}" \
+					"			" \
+					"			if(v:this.TypeOfBlock == 0){" \
+					"				if(v:this.columnNo == 4 && v:this.rowNo == 2){" \
+					"					f:animation_play(v:this->\"Animation 2\")" \
+					"					//fire_delayed 200, ev:levelComplete()" \
+					"				}" \
+					"			}" \
+					"		" \
+					"		" \
 					"		}" \
 					"	}" \
+					"" \
 					"	" \
-					"	v:this.x = dp:blockDimensions * v:this.columnNo" \
-					"	v:this.y = dp:blockDimensions * v:this.rowNo" \
 					"	false" \
 					"}"
 			}
@@ -286,26 +375,111 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 				script: "function(v:arg0::bool)" \
 					"{" \
 					"	if(v:this.focused){" \
+					"		" \
 					"		match_event v:event = ev:moveUp in" \
 					"		{" \
 					"			v:this.rowNo = v:this.rowNo - 1" \
+					"			v:this.moveDirection = 0" \
 					"		}" \
 					"		" \
 					"		match_event v:event = ev:moveDown in" \
 					"		{" \
 					"			v:this.rowNo = v:this.rowNo + 1" \
+					"			v:this.moveDirection = 1" \
 					"		}" \
 					"		" \
 					"		match_event v:event = ev:moveLeft in" \
 					"		{" \
 					"			v:this.columnNo = v:this.columnNo - 1" \
+					"			v:this.moveDirection = 2" \
 					"		}" \
 					"		" \
 					"		match_event v:event = ev:moveRight in" \
 					"		{" \
 					"			v:this.columnNo = v:this.columnNo + 1" \
+					"			v:this.moveDirection = 3" \
 					"		}" \
+					"		" \
+					"		" \
+					"		" \
+					"		let v:index = 0" \
+					"		in" \
+					"		{" \
+					"			v:index = v:this.columnNo + dp:GridSize * v:this.rowNo" \
+					"			" \
+					"			if(v:this.moveDirection == 0 && v:this.rowNo>=0){" \
+					"				if(dp:currentGrid[v:index] == true){" \
+					"					v:this.rowNo += 1					" \
+					"				}" \
+					"			}" \
+					"			else if(v:this.moveDirection == 1){" \
+					"				if(v:this.LengthOfBlock == 0 && ((v:this.rowNo + 1) < dp:GridSize)){" \
+					"					if(dp:currentGrid[v:index + dp:GridSize] == true){" \
+					"						v:this.rowNo -= 1" \
+					"					}" \
+					"				}" \
+					"				else if(v:this.LengthOfBlock == 1 && ((v:this.rowNo + 2) < dp:GridSize)){" \
+					"					if(dp:currentGrid[v:index + (dp:GridSize * 2)] == true){" \
+					"						v:this.rowNo -= 1" \
+					"					}" \
+					"				}" \
+					"			}" \
+					"			else if(v:this.moveDirection == 2 && v:this.columnNo >= 0){" \
+					"				if(dp:currentGrid[v:index] == true){" \
+					"					v:this.columnNo += 1" \
+					"				}" \
+					"			}" \
+					"			else if(v:this.moveDirection == 3){" \
+					"				if(v:this.LengthOfBlock == 0 && ((v:this.columnNo + 1) < dp:GridSize)){" \
+					"					if(dp:currentGrid[v:index + 1] == true){" \
+					"						v:this.columnNo -= 1" \
+					"					}" \
+					"				}" \
+					"				else if(v:this.LengthOfBlock == 1 && ((v:this.columnNo + 2) < dp:GridSize)){" \
+					"					if(dp:currentGrid[v:index + 2] == true){" \
+					"						v:this.columnNo -= 1" \
+					"					}" \
+					"				}" \
+					"			}				" \
+					"		}" \
+					"		" \
+					"		" \
+					"		if(v:this.columnNo<0){" \
+					"			v:this.columnNo = 0" \
+					"		}" \
+					"		" \
+					"		if(v:this.rowNo<0){" \
+					"			v:this.rowNo = 0" \
+					"		}" \
+					"		" \
+					"		if(v:this.TypeOfBlock == 2){" \
+					"			if(v:this.rowNo>=(dp:GridSize - 2) && v:this.LengthOfBlock != 0){" \
+					"				v:this.rowNo = dp:GridSize - 3" \
+					"			}" \
+					"			else if(v:this.rowNo>=(dp:GridSize - 1) && v:this.LengthOfBlock == 0){" \
+					"				v:this.rowNo = dp:GridSize - 2" \
+					"			}" \
+					"			" \
+					"			if(v:this.columnNo>(dp:GridSize - 1)){" \
+					"				v:this.columnNo = dp:GridSize - 1" \
+					"			}			" \
+					"		}" \
+					"		else if(v:this.TypeOfBlock == 0 || v:this.TypeOfBlock == 1){" \
+					"			if(v:this.columnNo>=(dp:GridSize - 2) && v:this.LengthOfBlock != 0){" \
+					"				v:this.columnNo = dp:GridSize - 3" \
+					"			}" \
+					"			else if(v:this.columnNo>=(dp:GridSize - 1) && v:this.LengthOfBlock == 0){" \
+					"				v:this.columnNo = dp:GridSize - 2" \
+					"			}" \
+					"			" \
+					"			if(v:this.rowNo>(dp:GridSize - 1)){" \
+					"				v:this.rowNo = dp:GridSize - 1" \
+					"			}" \
+					"		}" \
+					"" \
+					"		" \
 					"	}" \
+					"" \
 					"	" \
 					"" \
 					"	false" \
@@ -344,6 +518,25 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"}"
 			}
 		}
+		resetValues: conditional_script(2b76ad8e-6d58-4dc3-bbeb-ab9203d095fe)
+		{
+			triggerList: trigger_list(bf71311f-5534-4c68-88c8-223f3c2804f7)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(a4fbb0ee-5bf7-4df8-a021-f10cdd100061)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	dp:currentBlockRowList[v:this.buttonId] = v:this.rowNo" \
+					"	dp:currentBlockColumnList[v:this.buttonId] = v:this.columnNo" \
+					"	v:this.moveDirection = -1" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}
+		moveDirection: -1
 	}
 	y: y@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
 	x: x@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)

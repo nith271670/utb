@@ -1,0 +1,143 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(e220909f-f5b9-4b74-88dd-8f09aa719488)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(bdb956e3-3967-4868-b6ce-d9a94ca1b0ba)
+		{
+			features: feature_list [
+				ScaleMode(e0ca2945-efec-45a8-af9e-7e3807540d05)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(b1f7aab2-d9b2-4ea6-b223-e7a802175d78)
+				{
+					features: feature_list [
+						MultiLine(ca34a804-e23a-41dc-baab-90b5af5ace4b)
+						{
+							lineGap: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "LevelCompleteTxt"
+					visible: true
+					width: 253
+					height: 120
+					x: 69
+					y: 15
+					text: "Great Job! \\n Level Complete"
+					textColor: #000000FF
+					font: font_resource(3c2bc418-f007-4b1d-9dbe-0bac645686b2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(6659f13a-dc37-4210-b77a-28fcc694a958)
+				{
+					features: feature_list [
+						ScaleMode(a2b0f939-de46-4b3d-915e-0dae58509215)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(b4ac595d-fcd4-48f7-aef9-4ea57d731069)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(8dd0724b-b2de-4961-a0fc-8c56656c8061)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+									"	dp:levelNo += 1" \
+									"	fire ev:gotoOtherLevel()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(a3c60ee4-40a4-4b1f-ae8c-f9a474516ddd)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "goToNextLevel"
+					visible: true
+					width: 80
+					height: 75
+					x: 218
+					y: 141
+					image: image_resource(2d1cc2c6-f71c-4227-9670-06a0b1318cf8)
+					{
+						file: "images\\nextLevel.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(d159fac5-a102-4411-9ca6-277406a91425)
+				{
+					features: feature_list [
+						ScaleMode(eaa87c40-f68c-4d2c-bfb6-349fa7215801)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(7e0d3a6d-9012-449f-b354-f2deaaa646ac)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(45666f7a-74ac-4ce5-8e54-d447015c18bd)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+									"	f:pushDynamicStateMachine(popup_stack:Main,sm:levelList,0)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(28642b48-bc4b-4a4d-8fcd-632daf4b28b4)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "selectLevel"
+					visible: true
+					width: 83
+					height: 75
+					x: 105
+					y: 140
+					image: image_resource(531606a8-457b-400c-8c20-153638044775)
+					{
+						file: "images\\level.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "bg"
+			visible: true
+			width: width@e220909f-f5b9-4b74-88dd-8f09aa719488 (propref<int>)
+			height: height@e220909f-f5b9-4b74-88dd-8f09aa719488 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(90824305-7b58-4535-b74d-cb268bc9e6ae)
+			{
+				file: "images\\header.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "levelComplete"
+	visible: true
+	width: @b371b46a-325d-41b1-9468-33baf2972ffb (objectref<int>)
+	height: @d1789b26-ab3f-44d6-ab00-f9eb769dd968 (objectref<int>)
+	x: 50
+	y: 150
+}

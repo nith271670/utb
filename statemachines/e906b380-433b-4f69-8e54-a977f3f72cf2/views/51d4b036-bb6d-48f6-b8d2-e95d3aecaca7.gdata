@@ -1,0 +1,138 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(51d4b036-bb6d-48f6-b8d2-e95d3aecaca7)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(9e6b3708-a0ea-4093-9877-753b75c1370e)
+		{
+			features: feature_list [
+				ScaleMode(50225118-a002-4685-a52b-f453348da738)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(8903a3bd-7d8e-4507-8f04-6a08a310b52e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "StartGameTxt"
+					visible: true
+					width: 189
+					height: 67
+					x: 106
+					y: 57
+					text: "Start Game"
+					textColor: #000000FF
+					font: font_resource(2cea0a00-51e5-4875-961c-69da78f800af)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(822e2fd8-60e9-4a8a-a24b-4d89c9630fd5)
+				{
+					features: feature_list [
+						ScaleMode(c1708b2d-aded-4776-9ea3-69d5e8cf0ef1)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(eeed5cba-b31c-4edb-b8b4-5fcfbd455a75)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(7712e64f-75de-4a30-8adb-0600684c93d2)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+									"	dp:levelNo += 1" \
+									"	fire ev:goto_csLevels()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(cc720804-66c8-48f3-b688-1631c20dacc9)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "PlayGame"
+					visible: true
+					width: 80
+					height: 75
+					x: 109
+					y: 145
+					image: image_resource(bcde8ff7-87cc-4929-8c72-52143cc57f67)
+					{
+						file: "images\\play.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(6954b457-3874-454e-8c95-90822c0e98d7)
+				{
+					features: feature_list [
+						ScaleMode(253761f4-b109-4e3c-818f-e3a4dc098259)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(5d42fe8d-0029-4aec-aa24-2c702731edba)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f8ba415b-dbc1-4cf0-9265-711017fb71ca)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+									"	f:pushDynamicStateMachine(popup_stack:Main,sm:levelList,0)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(f72c21fa-7cd8-4f22-ac88-57a7b9ebd299)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "selectLevel"
+					visible: true
+					width: 83
+					height: 75
+					x: 212
+					y: 146
+					image: image_resource(edf5b5b6-41bc-4afd-b020-930053190a91)
+					{
+						file: "images\\level.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "bg"
+			visible: true
+			width: width@51d4b036-bb6d-48f6-b8d2-e95d3aecaca7 (propref<int>)
+			height: height@51d4b036-bb6d-48f6-b8d2-e95d3aecaca7 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(206037da-3a1f-4bf5-a0d9-51f86af43b29)
+			{
+				file: "images\\header.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "startGame"
+	visible: true
+	width: @b371b46a-325d-41b1-9468-33baf2972ffb (objectref<int>)
+	height: @d1789b26-ab3f-44d6-ab00-f9eb769dd968 (objectref<int>)
+	x: 50
+	y: 150
+}

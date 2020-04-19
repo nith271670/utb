@@ -9,10 +9,34 @@ events(b3fb9e35-aa0f-466d-b88f-cd02b7624c81)
 			eventId: 1
 			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
 		}, 
+		event(1960b92f-aa73-45d6-991c-e8c810e3b11b)
+		{
+			name: "playNextLevel"
+			eventId: 7
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
 		event(28dd5da3-d16c-41c2-8df2-36f63238145c)
 		{
 			name: "moveUp"
 			eventId: 2
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(2d3f5979-4ae6-43ae-8e1f-00a64c384444)
+		{
+			name: "loadLevelAgain"
+			eventId: 11
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(69a127da-843b-45b8-bfac-0f5a153cc4bd)
+		{
+			name: "goto_resetLevel"
+			eventId: 10
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(7752b62f-250b-49ce-8070-59ad3a233d2d)
+		{
+			name: "nextStep"
+			eventId: 5
 			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
 		}, 
 		event(9eb5b89a-b749-44e7-af43-62688796eb45)
@@ -29,8 +53,26 @@ events(b3fb9e35-aa0f-466d-b88f-cd02b7624c81)
 		}, 
 		event(cf6ec5ca-94e3-40bf-9948-500c1f698033)
 		{
-			name: "starLevel"
+			name: "starLevel0"
 			eventId: 4
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(d7050340-13e9-4d8c-a032-5f0ef357ca60)
+		{
+			name: "levelComplete"
+			eventId: 6
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(de6f163b-cdc1-42e9-b98b-b3b948dabebe)
+		{
+			name: "gotoOtherLevel"
+			eventId: 9
+			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
+		}, 
+		event(f610e5b5-88d5-40c2-b23a-1325ac816d19)
+		{
+			name: "goto_csLevels"
+			eventId: 8
 			event_group: @b058f691-fff9-4ca1-97fc-eaa7b219e97c (objectref<event_group>)
 		}]
 }

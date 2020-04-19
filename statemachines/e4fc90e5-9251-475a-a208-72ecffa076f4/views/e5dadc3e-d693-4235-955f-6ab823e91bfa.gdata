@@ -1,0 +1,162 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(e5dadc3e-d693-4235-955f-6ab823e91bfa)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(25faef1c-67e6-44d4-a9a0-4306ca00cf80)
+		{
+			name: "GameBg 1"
+			template: @e9a2c2e3-bea5-4b34-be0b-ec31b1f043bd (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(a2850be0-ca4e-4326-af91-e1f1e714af28)
+				{
+					name: "GameFrame 1"
+					template: @6dfbe538-9b65-4f49-be9b-cb2f7b9b8e30 (objectref<GtfContainer_template>)
+					children: children_list [
+						GtfContainer_template_instance(c6ebc7b5-83aa-4fa0-8dc8-0c92058e5776)
+						{
+							name: "GameArea 1"
+							template: @d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3 (objectref<GtfContainer_template>)
+							children: children_list [
+								GtfContainer_template_instance(751c1547-6974-409f-99d4-b7e185d73d76)
+								{
+									name: "mainBlock"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: 2
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 0
+									rowNo: 2
+									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: TypeOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+								}, 
+								GtfContainer_template_instance(f0c28640-d875-44b2-88b4-3a7e61aac7ba)
+								{
+									name: "VBlock1"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 0
+									rowNo: rowNo@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									buttonId: 1
+									LengthOfBlock: 0
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(a417ad91-9d50-42b4-af61-b52fe8da9448)
+								{
+									name: "VBlock2"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 2
+									rowNo: 1
+									buttonId: 2
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(4a84a26b-d34e-475a-a9df-f5503e123e18)
+								{
+									name: "HBlock1"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 3
+									rowNo: 0
+									buttonId: 3
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 1
+								}, 
+								GtfContainer_template_instance(e5f24c6b-c933-413b-8479-78917624cce9)
+								{
+									name: "VBlock3"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 4
+									rowNo: 1
+									buttonId: 4
+									LengthOfBlock: 1
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(65ccd6cf-7d00-4ce7-8f83-b7e1bedb0173)
+								{
+									name: "VBlock4"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 5
+									rowNo: 1
+									buttonId: 5
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(8bbab75f-8676-42d2-bece-b826c5e9ef6c)
+								{
+									name: "HBlock2"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 4
+									rowNo: 4
+									buttonId: 6
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 1
+								}, 
+								GtfContainer_template_instance(24998d68-bff6-43ba-bca9-5c64fc8d14a3)
+								{
+									name: "VBlock5"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 3
+									rowNo: 4
+									buttonId: 7
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 2
+								}, 
+								GtfContainer_template_instance(cce26277-3641-44c6-aa5d-09b1b2d23c78)
+								{
+									name: "HBlock3"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 2
+									rowNo: 3
+									buttonId: 8
+									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									TypeOfBlock: 1
+								}, 
+								GtfContainer_template_instance(17fc9288-e1f5-4d07-b825-0fe0e0857b05)
+								{
+									name: "VBlock6"
+									template: @a544eead-a7c5-47f7-920e-bbde213d64fc (objectref<GtfContainer_template>)
+									children: children_list []
+									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									columnNo: 1
+									rowNo: 3
+									buttonId: 9
+									LengthOfBlock: 1
+									TypeOfBlock: 2
+								}]
+						}]
+					x: x@6dfbe538-9b65-4f49-be9b-cb2f7b9b8e30 (propref<int>)
+				}]
+		}]
+	name: "vsLevel3"
+	visible: true
+	width: 500
+	height: 600
+	x: 0
+	y: 0
+}

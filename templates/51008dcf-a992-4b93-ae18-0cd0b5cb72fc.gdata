@@ -1,0 +1,95 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfImage_template(51008dcf-a992-4b93-ae18-0cd0b5cb72fc)
+{
+	name: "TLevelNo"
+	structure: GtfImage(e9de5c90-c3b5-4a44-9b2e-2665ded113c1)
+	{
+		features: feature_list [
+			ScaleMode(1165a9a4-2662-41b0-9513-c43515498a24)
+			{
+				scaleMode: 1
+			}, 
+			TouchShortReleased(a277ef95-669e-43a6-82a1-8b6a2e097e5b)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(6416504e-f5cf-48e8-82d3-6fe9724afe55)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:focusMoveTo(v:this)	" \
+						"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+						"	if(dp:levelNo == 0){" \
+						"		dp:levelNo = f:string2int(v:this->LevelNumber.levelNumber)" \
+						"		fire ev:goto_csLevels()" \
+						"	}" \
+						"	else if(dp:levelNo == f:string2int(v:this->LevelNumber.levelNumber)){" \
+						"		fire ev:goto_resetLevel()" \
+						"	}" \
+						"	else{" \
+						"		dp:levelNo = f:string2int(v:this->LevelNumber.levelNumber)" \
+						"		fire ev:gotoOtherLevel()" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c3e37c24-afa3-4bb5-8e25-0ae7d749434f)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfLabel(8150cee7-9885-4035-b5c2-a8b25c07ffaf)
+			{
+				features: feature_list [
+					StateFocused(02ca09ad-f4b6-4167-a4c3-5cf354843edf)
+					{
+						focusable: 3
+						focused: false
+					}, 
+					AutoFocus(accf8f97-60d2-483b-8d6e-e70b8ed8d61b)
+					{
+						initFocus: 0
+						focusedIndex: 0
+						focusNext: false
+						focusPrev: false
+						focusFlow: 0
+					}]
+				children: children_list []
+				name: "LevelNumber"
+				visible: true
+				width: width@e9de5c90-c3b5-4a44-9b2e-2665ded113c1 (propref<int>)
+				height: height@e9de5c90-c3b5-4a44-9b2e-2665ded113c1 (propref<int>)
+				x: 0
+				y: 0
+				text: levelNumber@8150cee7-9885-4035-b5c2-a8b25c07ffaf (propref<string>)
+				textColor: #000000FF
+				font: font_resource(8cbf1495-ba15-489a-b50f-68cc82e86c0c)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 40
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+				levelNumber: "1"
+			}]
+		name: "level"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		image: image_resource(3356f5c5-c8f6-4384-8afb-af82ba09d516)
+		{
+			file: "images\\level_no.png"
+		}
+		sRGB: false
+		horizontalAlign: 1
+		verticalAlign: 0
+	}
+	x: x@e9de5c90-c3b5-4a44-9b2e-2665ded113c1 (propref<int>)
+	y: y@e9de5c90-c3b5-4a44-9b2e-2665ded113c1 (propref<int>)
+	levelNumber: levelNumber@8150cee7-9885-4035-b5c2-a8b25c07ffaf (propref<string>)
+}

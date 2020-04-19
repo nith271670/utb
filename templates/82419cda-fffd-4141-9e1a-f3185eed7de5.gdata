@@ -61,7 +61,7 @@ GtfContainer_template(82419cda-fffd-4141-9e1a-f3185eed7de5)
 						visible: true
 						width: 50
 						height: 50
-						x: 20
+						x: 0
 						y: 50
 						text: "Level"
 						textColor: #000000FF
@@ -120,7 +120,7 @@ GtfContainer_template(82419cda-fffd-4141-9e1a-f3185eed7de5)
 						visible: true
 						width: 45
 						height: 45
-						x: 66
+						x: 45
 						y: 55
 						image: image_resource(7ec69eba-3505-41a3-900e-defae2653ce7)
 						{
@@ -138,7 +138,7 @@ GtfContainer_template(82419cda-fffd-4141-9e1a-f3185eed7de5)
 						visible: true
 						width: 50
 						height: 50
-						x: 152
+						x: 100
 						y: 50
 						text: "Moves"
 						textColor: #000000FF
@@ -197,7 +197,7 @@ GtfContainer_template(82419cda-fffd-4141-9e1a-f3185eed7de5)
 						visible: true
 						width: 45
 						height: 45
-						x: 210
+						x: 150
 						y: 55
 						image: image_resource(7f673493-99c8-4595-8dda-0337d534f414)
 						{
@@ -213,6 +213,24 @@ GtfContainer_template(82419cda-fffd-4141-9e1a-f3185eed7de5)
 							ScaleMode(2a968ea6-2783-4b80-8622-2af022ca92b9)
 							{
 								scaleMode: 1
+							}, 
+							TouchShortReleased(bda75cee-2707-4309-945d-d9b159925304)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(375b1a87-4f5b-4f24-a28e-64c4c4418981)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	fire ev:goto_resetLevel()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(5405f35f-ec91-4512-9d65-bba73d166785)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
 							}]
 						children: children_list [
 							GtfImage(c3f9bf3f-974e-444a-8cf7-4d2d89997565)
@@ -236,32 +254,139 @@ GtfContainer_template(82419cda-fffd-4141-9e1a-f3185eed7de5)
 								sRGB: false
 								horizontalAlign: 0
 								verticalAlign: 1
-							}, 
-							GtfRectangle(add9ee98-7e91-4d01-ac63-b82f2d493831)
-							{
-								features: feature_list [
-									Border(0eede5f6-83ed-4c5b-a1d1-7442550bf032)
-									{
-										borderThickness: 2
-										borderColor: #FFD700FF
-										borderStyle: 0
-									}]
-								children: children_list []
-								name: "FocusBorder"
-								visible: false
-								width: width@9ab987be-9168-4730-8afd-84daeba0ebff (propref<int>)
-								height: height@9ab987be-9168-4730-8afd-84daeba0ebff (propref<int>)
-								x: 0
-								y: 0
-								fillColor: #FFFFFF00
 							}]
 						name: "Reset"
 						visible: true
 						width: 45
 						height: 45
-						x: 317
+						x: 215
 						y: 55
 						image: image_resource(a5cb22ce-f62f-4a97-8782-a4503a6bd41e)
+						{
+							file: "images\\reset.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfImage(a4d613bd-b804-43fe-ae34-5068b4d10e4a)
+					{
+						features: feature_list [
+							ScaleMode(bb98c617-05f9-488a-b078-aafd4b57f2b7)
+							{
+								scaleMode: 1
+							}, 
+							TouchShortReleased(6e933ed4-a81d-43d5-be4b-e5ff2b4d7830)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(6b9232af-8608-4268-8741-fbb99db1f44f)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+										"	f:pushDynamicStateMachine(popup_stack:Main,sm:levelList,0)" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(2ae9b86d-3615-4164-ac19-6ae3dd40b861)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfImage(2710a0e0-14ee-4ba0-84b4-eff46513e1aa)
+							{
+								features: feature_list [
+									ScaleMode(5f1a48fc-709b-479f-8bac-bcc9116147ad)
+									{
+										scaleMode: 2
+									}]
+								children: children_list []
+								name: "reset_img"
+								visible: true
+								width: 35
+								height: 35
+								x: 5
+								y: 7
+								image: image_resource(a2437856-40d8-4239-85bb-4de607987f85)
+								{
+									file: "images\\list.png"
+								}
+								sRGB: false
+								horizontalAlign: 0
+								verticalAlign: 1
+							}]
+						name: "levelList"
+						visible: true
+						width: 45
+						height: 45
+						x: 280
+						y: 55
+						image: image_resource(8ea1c364-67f8-40fe-9281-d29ef0551746)
+						{
+							file: "images\\reset.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfImage(3d27794e-749a-4288-b333-043e8b19aff0)
+					{
+						features: feature_list [
+							ScaleMode(4ef099bd-9bbd-4872-a1b5-697d243c4e72)
+							{
+								scaleMode: 1
+							}, 
+							TouchShortReleased(1d395ffd-1bc4-4aea-81ab-18f256e83739)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(36ac2c5c-8b0e-4e13-a3d8-c3bb3ecb4c90)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	f:pushDynamicStateMachine(popup_stack:Main, sm:HelpScreen,0)" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(bc22df48-6d22-46d4-b715-a48c73270646)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfImage(71f48a9b-768b-481d-be09-5d83ad7d2d93)
+							{
+								features: feature_list [
+									ScaleMode(b9d6d615-f9ad-4f80-9d2a-5df78a4d724e)
+									{
+										scaleMode: 2
+									}]
+								children: children_list []
+								name: "reset_img"
+								visible: true
+								width: 35
+								height: 35
+								x: 5
+								y: 4
+								image: image_resource(8c91e145-c795-441f-b0fc-c2f409388ce6)
+								{
+									file: "images\\help.png"
+								}
+								sRGB: false
+								horizontalAlign: 0
+								verticalAlign: 1
+							}]
+						name: "helpBtn"
+						visible: true
+						width: 45
+						height: 45
+						x: 345
+						y: 55
+						image: image_resource(b2e6a17f-daf1-4afe-a1b6-4cacbbd49fff)
 						{
 							file: "images\\reset.png"
 						}

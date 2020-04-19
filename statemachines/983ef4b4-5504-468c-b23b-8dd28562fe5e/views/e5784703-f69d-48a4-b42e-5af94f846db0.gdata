@@ -1,0 +1,238 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(e5784703-f69d-48a4-b42e-5af94f846db0)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(c34cacd0-2f6d-4b29-9076-61227603639e)
+		{
+			name: "TGameBg 1"
+			template: @e9a2c2e3-bea5-4b34-be0b-ec31b1f043bd (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer(a5e33383-a82c-4c58-990b-ab9980d8f2ad)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage(e1cea7b4-56c6-4b28-ada4-4f36cff6f4de)
+						{
+							features: feature_list [
+								ScaleMode(2eb0151e-9ebd-4d82-9573-684b92538252)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "frame"
+							visible: true
+							width: @e65b3dd6-64d9-48e9-8448-752aa0fd1551 (objectref<int>)
+							height: @1b5b1b6d-c061-4c9d-974d-d97c6d68389b (objectref<int>)
+							x: 10
+							y: 100
+							image: image_resource(e9c780e0-48d2-489f-9688-3fe602188eab)
+							{
+								file: "images\\frame.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(d24ec186-4472-4ac7-bdbd-bbdef3fc305a)
+						{
+							features: feature_list [
+								ScaleMode(773e0b68-3790-4b16-a7be-02fde3ca28a8)
+								{
+									scaleMode: 1
+								}]
+							children: children_list [
+								GtfLabel(e475005a-5993-43b9-9f65-785e1784b645)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "selectLevelTxt"
+									visible: true
+									width: width@d24ec186-4472-4ac7-bdbd-bbdef3fc305a (propref<int>)
+									height: 63
+									x: 0
+									y: 10
+									text: "Select Level"
+									textColor: #000000FF
+									font: font_resource(cff6bfda-fbfa-458f-b21b-ba4ead584efe)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 50
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}, 
+								GtfInstantiator(e9f97a68-0bb7-4f5a-aa78-4e7d387f01a5)
+								{
+									features: feature_list [
+										LayoutPolicyFlow(39bd7f58-acc1-4809-bcf3-36f401ff90f3)
+										{
+											horizontalGap: 20
+											verticalGap: 30
+											layoutDirection: 0
+											horizontalChildAlign: 1
+											verticalChildAlign: 0
+										}, 
+										StateFocused(093062d6-18e2-418f-8e7f-596f8eabe9eb)
+										{
+											focusable: 3
+											focused: false
+										}, 
+										KeyShortReleased(da6f7520-265e-4c6f-a74f-6d2d77df0421)
+										{
+											keyShortReleased: function<bool,int>(654760e6-1d85-4018-b5b7-f7eaae632b57)
+											{
+												script: "function(v:keyId::int)" \
+													"{" \
+													"	f:trace_string(f:int2string(v:keyId))" \
+													"	if(v:keyId ==134){" \
+													"		f:focusPrevious()" \
+													"	}" \
+													"	" \
+													"	if(v:keyId == 135 || v:keyId ==129){" \
+													"		f:focusNext()" \
+													"	}" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StatePressed(b90a06a5-3428-4615-8df3-d643be3b4915)
+										{
+											pressed: false
+										}]
+									children: children_list [
+										GtfContainer(8f43bd58-dd63-4573-833a-dfcddbfcf2f2)
+										{
+											features: feature_list [
+												LineIndex(b1e2ac93-68a8-4fa2-b22b-18eaa9d83a5e)
+												{
+													lineIndex: 0
+												}]
+											children: children_list [
+												GtfImage_template_instance(8e75c6d6-7074-49ab-a3fe-c4bfca06e852)
+												{
+													name: "TLevelNo 1"
+													template: @51008dcf-a992-4b93-ae18-0cd0b5cb72fc (objectref<GtfImage_template>)
+													children: children_list []
+													x: x@51008dcf-a992-4b93-ae18-0cd0b5cb72fc (propref<int>)
+													y: y@51008dcf-a992-4b93-ae18-0cd0b5cb72fc (propref<int>)
+													levelNumber: levelNumber@51008dcf-a992-4b93-ae18-0cd0b5cb72fc (propref<string>)
+													setLevel: string_scriptedValue(f8484038-2e35-40f4-9202-ec7737b58da2)
+													{
+														triggerList: trigger_list(94e442dd-6549-4228-be9d-bc979d8a418e)
+														{
+															script: "v:this->^.lineIndex" \
+																"dp:NumLevels"
+														}
+														onTrigger: function<bool,bool>(3967a464-d7fd-4fdc-9f8e-bf460da3468c)
+														{
+															script: "function(v:arg0::bool)" \
+																"{" \
+																"	v:this.levelNumber = f:int2string(v:this->^.lineIndex + 1)" \
+																"	false" \
+																"}"
+														}
+														read: function<string>(75b416d4-1ed4-4082-80ad-5eb18d3a4443)
+														{
+															script: "function()" \
+																"{" \
+																"	\"\"" \
+																"}"
+														}
+														write: function<bool,string>(fb0aa00c-2878-49c8-aba0-174498678a67)
+														{
+															script: "function(v:arg0::string)" \
+																"{" \
+																"	false" \
+																"}"
+														}
+													}
+												}]
+											name: "Container 1"
+											visible: true
+											width: 100
+											height: 100
+											x: 0
+											y: 0
+										}]
+									name: "Instantiator 1"
+									visible: true
+									width: width@d24ec186-4472-4ac7-bdbd-bbdef3fc305a (propref<int>)
+									height: 309
+									x: 0
+									y: 100
+									numItems: 5
+									lineMapping: intlist []
+								}]
+							name: "frameBG"
+							visible: true
+							width: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
+							height: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
+							x: 45
+							y: 136
+							image: image_resource(49c2cc18-cdb4-4673-80c5-d2f98aa15a95)
+							{
+								file: "images\\framebg.png"
+							}
+							sRGB: false
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "GameFrame"
+					visible: true
+					width: @6cc24569-13be-4101-991f-a4441cb7eaae (objectref<int>)
+					height: @4f1945d3-de12-40f5-8959-01246f9f8e46 (objectref<int>)
+					x: 0
+					y: 10
+				}, 
+				GtfImage(3dd756de-83b2-4a57-84b1-69614e0eafa9)
+				{
+					features: feature_list [
+						ScaleMode(18bd2d8a-6e35-448c-81ae-bf841944c296)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfLabel(f45d18e1-f842-4290-9e85-78d985676051)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "TitleTxt"
+							visible: true
+							width: width@3dd756de-83b2-4a57-84b1-69614e0eafa9 (propref<int>)
+							height: height@3dd756de-83b2-4a57-84b1-69614e0eafa9 (propref<int>)
+							x: 0
+							y: 0
+							text: "UnBlock the Block"
+							textColor: #000000FF
+							font: font_resource(f493da12-c082-4835-9ca5-07388510a648)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 25
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "gameTitle"
+					visible: true
+					width: 350
+					height: 70
+					x: 75
+					y: 20
+					image: image_resource(d72a775d-6727-45ae-bf45-134f25dacc08)
+					{
+						file: "images\\header.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+		}]
+	name: "levelList"
+	visible: true
+	width: @6cc24569-13be-4101-991f-a4441cb7eaae (objectref<int>)
+	height: @4f1945d3-de12-40f5-8959-01246f9f8e46 (objectref<int>)
+	x: 0
+	y: 0
+}

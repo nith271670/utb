@@ -1,0 +1,13 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(e5888d25-0c4b-47c3-b55e-7959f3b19590)
+{
+	features: feature_list []
+	children: children_list []
+	name: "resetLevel"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

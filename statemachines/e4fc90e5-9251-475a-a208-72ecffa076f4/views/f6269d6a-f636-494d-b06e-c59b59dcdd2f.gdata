@@ -41,7 +41,7 @@ GtfView(f6269d6a-f636-494d-b06e-c59b59dcdd2f)
 									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									columnNo: 3
 									rowNo: rowNo@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
-									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									buttonId: 1
 									LengthOfBlock: 1
 									TypeOfBlock: 2
 								}, 
@@ -54,7 +54,7 @@ GtfView(f6269d6a-f636-494d-b06e-c59b59dcdd2f)
 									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									columnNo: 4
 									rowNo: 1
-									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									buttonId: 2
 									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									TypeOfBlock: 2
 								}, 
@@ -67,7 +67,7 @@ GtfView(f6269d6a-f636-494d-b06e-c59b59dcdd2f)
 									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									columnNo: 2
 									rowNo: 3
-									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									buttonId: 3
 									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									TypeOfBlock: 2
 								}, 
@@ -80,12 +80,223 @@ GtfView(f6269d6a-f636-494d-b06e-c59b59dcdd2f)
 									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									columnNo: 3
 									rowNo: 3
-									buttonId: buttonId@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									buttonId: 4
 									LengthOfBlock: LengthOfBlock@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									TypeOfBlock: 1
 								}]
 						}]
 					x: x@6dfbe538-9b65-4f49-be9b-cb2f7b9b8e30 (propref<int>)
+				}, 
+				GtfRectangle(44c2934a-d696-46a5-83b3-5748fb8c4954)
+				{
+					features: feature_list [
+						TouchShortReleased(777fcd52-23e8-4c68-ae23-b0dabbb55beb)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(0602b964-08e2-47ed-9955-794f559415da)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->ClicktoStart.visible){" \
+									"		v:this->ClicktoStart.visible = false" \
+									"		v:this->^->skipDemo.visible = false" \
+									"		f:focusNext()" \
+									"		dp:stepNum = 0" \
+									"		fire_delayed 1000, ev:nextStep()" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+						}, 
+						StateTouched(2ccac255-0730-4b93-960a-2b226ae8db32)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfImage(d352ed1a-2a27-49f0-b81c-9da982d9b0b3)
+						{
+							features: feature_list [
+								ScaleMode(155be92b-41d8-41b2-9a83-6f56731288b5)
+								{
+									scaleMode: 1
+								}]
+							children: children_list [
+								GtfLabel(20fa2e4a-eb26-4a4e-966a-66545fd74022)
+								{
+									features: feature_list [
+										MultiLine(5c33a31f-6769-42cd-b8b2-29c813acf183)
+										{
+											lineGap: -5
+											maxLineCount: 0
+										}]
+									children: children_list []
+									name: "Label 3"
+									visible: true
+									width: width@d352ed1a-2a27-49f0-b81c-9da982d9b0b3 (propref<int>)
+									height: height@d352ed1a-2a27-49f0-b81c-9da982d9b0b3 (propref<int>)
+									x: 0
+									y: 0
+									text: "Click anywhere on the \\n screen to See Demo"
+									textColor: #000000FF
+									font: font_resource(4840a4a3-0291-4fa6-872e-0f3451297dfb)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 28
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "ClicktoStart"
+							visible: true
+							width: 300
+							height: 100
+							x: 100
+							y: 271
+							image: image_resource(ffd3a003-8d89-4de5-9f28-501a8f0b9963)
+							{
+								file: "images\\level_no.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Overlay"
+					visible: true
+					width: width@f6269d6a-f636-494d-b06e-c59b59dcdd2f (propref<int>)
+					height: height@f6269d6a-f636-494d-b06e-c59b59dcdd2f (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+					nextStep: conditional_script(343acaaf-190c-4495-abf0-388311d45859)
+					{
+						triggerList: trigger_list(06624b1d-a998-4e68-9aad-fe35241d3de6)
+						{
+							script: "ev:nextStep"
+						}
+						onTrigger: function<bool,bool>(6551e1cd-885d-4bf9-84a5-c968eef53b6c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:nextStep in" \
+								"	{" \
+								"		if(dp:stepNum == 0){" \
+								"			f:focusNext()" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()			" \
+								"		}" \
+								"		else if(dp:stepNum == 1){" \
+								"			" \
+								"			f:focusMoveTo(v:this->^->\"GameFrame 1\"->\"GameArea 1\"->HBlock)" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()	" \
+								"		}" \
+								"		else if(dp:stepNum == 2){" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->HBlock.columnNo += 1" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()	" \
+								"		}" \
+								"		else if(dp:stepNum == 3){" \
+								"			f:focusMoveTo(v:this->^->\"GameFrame 1\"->\"GameArea 1\"->VBlock1)" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()	" \
+								"		}" \
+								"		else if(dp:stepNum == 4){" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->VBlock1.rowNo += 1" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->VBlock1.rowNo += 1" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->VBlock1.rowNo += 1" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()	" \
+								"		}" \
+								"		else if(dp:stepNum == 5){" \
+								"			f:focusMoveTo(v:this->^->\"GameFrame 1\"->\"GameArea 1\"->VBlock2)" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()	" \
+								"		}" \
+								"		else if(dp:stepNum == 6){" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->VBlock2.rowNo -= 1" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()	" \
+								"		}" \
+								"		else if(dp:stepNum == 7){" \
+								"			f:focusMoveTo(v:this->^->\"GameFrame 1\"->\"GameArea 1\"->mainBlock)" \
+								"			dp:stepNum += 1" \
+								"			fire_delayed 1000, ev:nextStep()	" \
+								"		}" \
+								"		else if(dp:stepNum == 8){" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->mainBlock.columnNo += 1" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->mainBlock.columnNo += 1" \
+								"			v:this->^->\"GameFrame 1\"->\"GameArea 1\"->mainBlock.columnNo += 1	" \
+								"		}" \
+								"		" \
+								"" \
+								"	}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(0397d9d6-2f05-4eb2-9695-440aa3e0d56f)
+				{
+					features: feature_list [
+						ScaleMode(ae170f09-546d-4bba-9c24-3c3533d805c4)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(3ae9479a-7881-4503-9f2a-9ca76faba093)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(4238e69a-37f8-46dd-87b5-209e70089de4)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:pushDynamicStateMachine(popup_stack:Main,sm:StartGame,0)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(044e5dee-c27f-4a84-abcb-3b53f59df18e)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(3dbe22ea-1bbe-4bd5-b552-79e8263ef006)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 7"
+							visible: true
+							width: 112
+							height: 37
+							x: 106
+							y: 7
+							text: "Skip Demo"
+							textColor: #000000FF
+							font: font_resource(b1043870-7b86-4a1f-af75-9cf7db20c6bf)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 25
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "skipDemo"
+					visible: true
+					width: 300
+					height: 50
+					x: 100
+					y: 380
+					image: image_resource(0e130109-8c10-4939-b294-3e253c69b72c)
+					{
+						file: "images\\level_no.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
 				}]
 		}]
 	name: "SplashScreen"
@@ -94,37 +305,4 @@ GtfView(f6269d6a-f636-494d-b06e-c59b59dcdd2f)
 	height: 600
 	x: 0
 	y: 0
-	resetValues: conditional_script(6077e3dd-fe57-46e5-865f-7c02b13ca1f2)
-	{
-		triggerList: trigger_list(bd83bf49-fe22-41d5-9a04-66cc458b795d)
-		{
-			script: "ev:starLevel"
-		}
-		onTrigger: function<bool,bool>(4c11a413-7a5c-41a2-abee-a231e048faa2)
-		{
-			script: "function(v:arg0::bool)" \
-				"{" \
-				"	if(!v:arg0){" \
-				"		match_event v:event = ev:starLevel in" \
-				"		{" \
-				"			let v:i = 0" \
-				"			in" \
-				"			{" \
-				"				while( v:i < dp:GridSize * dp:GridSize ) " \
-				"				{" \
-				"					dp:currentGrid[v:i] = false" \
-				"					v:i += 1;" \
-				"				}" \
-				"				" \
-				"				dp:currentLevelBlockTypeList =  dp:Level0_BlockList" \
-				"				dp:currentLevelBlockRowList = dp:Level0_BlockRowList" \
-				"				dp:currentLevelBlockColumnList = dp:Level0_BlockColumnList		" \
-				"			}" \
-				"		}" \
-				"	}" \
-				"" \
-				"	false" \
-				"}"
-		}
-	}
 }

@@ -1,0 +1,506 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(c99f4fa3-5698-4942-8c09-b44322ba5daf)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(56b06b11-1b58-4f7a-be9f-dec6e8259148)
+		{
+			name: "TGameBg"
+			template: @e9a2c2e3-bea5-4b34-be0b-ec31b1f043bd (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer(d17dea91-9370-4a57-a875-3c3d15c95c2e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage(d6eaa204-a017-4466-8e1e-5d68abe0882c)
+						{
+							features: feature_list [
+								ScaleMode(32435869-5f22-40bf-a96d-a25d0489ceeb)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "frame"
+							visible: true
+							width: @e65b3dd6-64d9-48e9-8448-752aa0fd1551 (objectref<int>)
+							height: 520
+							x: 10
+							y: 65
+							image: image_resource(739c672d-cbc3-4159-af64-43dde2048a21)
+							{
+								file: "images\\frame.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(512e0cb7-f035-4258-958c-ef3bd04b6d50)
+						{
+							features: feature_list [
+								ScaleMode(fe67405f-8676-453e-81b9-cf532e83650a)
+								{
+									scaleMode: 1
+								}]
+							children: children_list [
+								GtfLabel(ee726f0d-1e90-4d50-9ba8-1f05484977c0)
+								{
+									features: feature_list [
+										MultiLine(b474504e-93ed-48a9-b2fc-ae18137b2e2c)
+										{
+											lineGap: 0
+											maxLineCount: 0
+										}]
+									children: children_list [
+										GtfImage(1d36dd88-04f7-4b64-bef7-1a2c0ec18dc9)
+										{
+											features: feature_list [
+												ScaleMode(35f13afd-0224-4e54-9dce-d4ed50eacfa0)
+												{
+													scaleMode: 1
+												}]
+											children: children_list []
+											name: "block"
+											visible: true
+											width: 77
+											height: 40
+											x: 112
+											y: -5
+											image: image_resource(aaf8877c-2216-40cf-82ec-d5176436b209)
+											{
+												file: "images\\mainBlock.png"
+											}
+											sRGB: false
+											horizontalAlign: 0
+											verticalAlign: 1
+										}]
+									name: "Instructions"
+									visible: true
+									width: 390
+									height: 25
+									x: 10
+									y: 30
+									text: "Special Block"
+									textColor: #FFFFFFFF
+									font: font_resource(2f5f64e6-50eb-457e-bf13-189064534c72)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfLabel(2f5d876e-0859-4717-8644-e6779e2b895c)
+								{
+									features: feature_list [
+										MultiLine(55361244-2b5c-4984-9334-0a125a2281a8)
+										{
+											lineGap: 0
+											maxLineCount: 0
+										}]
+									children: children_list [
+										GtfImage(7e6f82b1-8dea-4cb5-aafa-7eb189cbf99d)
+										{
+											features: feature_list [
+												ScaleMode(9a23a3c9-a2a9-4187-b250-c5ee98391352)
+												{
+													scaleMode: 1
+												}, 
+												TouchShortReleased(96214a0f-a70b-4d50-a2b5-576f71cc0760)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(d6912ef2-c8db-4e86-b2e5-fd8406d44047)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"	fire ev:goto_resetLevel()" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(0066bb80-0f57-4f34-a208-29441f2e1043)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}]
+											children: children_list [
+												GtfImage(80c3c0a5-ca9b-4bcb-babc-a04b76a9ad0f)
+												{
+													features: feature_list [
+														ScaleMode(211c6657-7d5c-49c4-af88-4b4e12729e3c)
+														{
+															scaleMode: 2
+														}]
+													children: children_list []
+													name: "reset_img"
+													visible: true
+													width: 35
+													height: 35
+													x: 3
+													y: 4
+													image: image_resource(8250e85d-f610-4572-beeb-987bfc3ac656)
+													{
+														file: "images\\reset_icon.png"
+													}
+													sRGB: false
+													horizontalAlign: 0
+													verticalAlign: 1
+												}]
+											name: "Reset copy 1"
+											visible: true
+											width: 40
+											height: 40
+											x: 130
+											y: -5
+											image: image_resource(b76102d8-5598-44ff-9003-8a9b79f2c328)
+											{
+												file: "images\\reset.png"
+											}
+											sRGB: false
+											horizontalAlign: 0
+											verticalAlign: 1
+										}]
+									name: "Reset"
+									visible: true
+									width: 390
+									height: 25
+									x: 10
+									y: 75
+									text: "Reset Level Button "
+									textColor: #FFFFFFFF
+									font: font_resource(8be837a9-c4b7-4db8-b0ea-61fd27c7b3ae)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfLabel(1da7644c-4db3-4d8d-9295-07cae9c37bbe)
+								{
+									features: feature_list [
+										MultiLine(769c49e2-4761-41d7-872f-73d4e010fd50)
+										{
+											lineGap: 0
+											maxLineCount: 0
+										}]
+									children: children_list [
+										GtfImage(9655845c-0c7f-462d-bec0-9cd7028d8cce)
+										{
+											features: feature_list [
+												ScaleMode(52766e6d-c7f1-4dde-9ae5-78f91edcfdfb)
+												{
+													scaleMode: 1
+												}, 
+												TouchShortReleased(eab1c9d6-a6ad-4ba9-923f-74e83761a5f0)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(21cabee4-89a3-4fc6-8cdd-d92781db70d6)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+															"	f:pushDynamicStateMachine(popup_stack:Main,sm:levelList,0)" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(bb12edc9-cffa-4092-b871-7347322d3764)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}]
+											children: children_list [
+												GtfImage(81f7cbd1-c16b-4411-b22f-dc80f0de8773)
+												{
+													features: feature_list [
+														ScaleMode(d802234e-50c9-42f5-9c52-dccb7fab107f)
+														{
+															scaleMode: 2
+														}]
+													children: children_list []
+													name: "reset_img"
+													visible: true
+													width: 30
+													height: 30
+													x: 5
+													y: 7
+													image: image_resource(7daea94c-350f-4956-a687-55bd883c3402)
+													{
+														file: "images\\list.png"
+													}
+													sRGB: false
+													horizontalAlign: 0
+													verticalAlign: 1
+												}]
+											name: "levelList copy 1"
+											visible: true
+											width: 40
+											height: 40
+											x: 127
+											y: -5
+											image: image_resource(da1bf012-d137-451b-927c-7e36190c7ffa)
+											{
+												file: "images\\reset.png"
+											}
+											sRGB: false
+											horizontalAlign: 0
+											verticalAlign: 1
+										}]
+									name: "listLevel"
+									visible: true
+									width: 390
+									height: 25
+									x: 10
+									y: 120
+									text: "Level List Button "
+									textColor: #FFFFFFFF
+									font: font_resource(31c3a1f6-6803-4914-aadf-a58d147e4819)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfLabel(d6cff825-ce97-43ed-b860-10fb32356dca)
+								{
+									features: feature_list [
+										MultiLine(f52242e8-131f-43bd-bc87-ca1ca1a1ac50)
+										{
+											lineGap: 0
+											maxLineCount: 0
+										}]
+									children: children_list []
+									name: "goal"
+									visible: true
+									width: 390
+									height: 25
+									x: 10
+									y: 155
+									text: "GOAL:"
+									textColor: #FFFF00FF
+									font: font_resource(578745fe-dd6b-4a37-8318-47559a9e6194)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfLabel(fa627057-8b27-4164-bef2-d9794188c12d)
+								{
+									features: feature_list [
+										MultiLine(a2228604-a92a-45b1-8da2-4ca5ae8e521c)
+										{
+											lineGap: 0
+											maxLineCount: 0
+										}]
+									children: children_list []
+									name: "goalTxt"
+									visible: true
+									width: 390
+									height: 83
+									x: 10
+									y: 185
+									text: "The Goal of the Puzzle is to move the special block out of the board. You have to move the blocks present on the board back and forth to clear the path."
+									textColor: #FFFFFFFF
+									font: font_resource(870a4b98-b5f7-430e-b8cf-e46c412ed090)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfLabel(784f3380-ef4d-4e3d-94b8-36c0d3a397cc)
+								{
+									features: feature_list [
+										MultiLine(c514bba3-3363-47ac-b427-58fef16ed9e2)
+										{
+											lineGap: 0
+											maxLineCount: 0
+										}]
+									children: children_list []
+									name: "COntrols"
+									visible: true
+									width: 390
+									height: 25
+									x: 10
+									y: 275
+									text: "CONTROLS:"
+									textColor: #FFFF00FF
+									font: font_resource(f401200c-7700-4af3-b6fb-40bb9ca845bb)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfLabel(0c8aee17-41ed-491f-884a-410988eb9964)
+								{
+									features: feature_list [
+										MultiLine(a03e968b-1f1f-4dae-a75c-bd160b51afa3)
+										{
+											lineGap: 0
+											maxLineCount: 0
+										}]
+									children: children_list []
+									name: "controlsTxt"
+									visible: true
+									width: 390
+									height: 95
+									x: 10
+									y: 295
+									text: "Focus any block - PageUp/PageDown/Tab keys or Touch \\nMove Horizontal Block - Left/Right Arrow keys or  Touch \\nMove Vertical Block - Up/Down Arrow keys or Touch"
+									textColor: #FFFFFFFF
+									font: font_resource(fbd06d5b-c263-4177-9dd7-e25af7a32014)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}]
+							name: "frameBG"
+							visible: true
+							width: @d258c8c9-0b91-4873-aa51-91d058fb871d (objectref<int>)
+							height: 460
+							x: 47
+							y: 95
+							image: image_resource(81fde5a0-cca3-48d9-b04f-f9ef285e4395)
+							{
+								file: "images\\framebg.png"
+							}
+							sRGB: false
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfEllipse(dfee56e8-de45-4aab-be1b-9e7aea7cfcb2)
+						{
+							features: feature_list [
+								TouchShortReleased(e9381f7e-8255-437c-a9cd-16d97ce6e011)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(0f2ae10c-81aa-4cb6-acc9-5d395706b00f)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	f:popDynamicStateMachine(popup_stack:Main,sm:HelpScreen)" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(5a35b8da-187a-45c4-8b49-5f2c714fcb03)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfEllipse(fb5fb69f-02bf-44cd-b0e3-1f74eb8e36bb)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLabel(6e0e7f6f-c378-4cc6-83e3-8e59a77afc49)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Label 6"
+											visible: true
+											width: 35
+											height: 35
+											x: 0
+											y: 0
+											text: "X"
+											textColor: #FFFFFFFF
+											font: font_resource(758cdb70-f0df-4c90-8cf3-d4078e6f48e5)
+											{
+												file: "PT_Sans_Narrow.ttf"
+												size: 28
+											}
+											horizontalAlign: 1
+											verticalAlign: 0
+										}]
+									name: "Ellipse 2"
+									visible: true
+									width: 36
+									height: 36
+									x: 2
+									y: 2
+									fillColor: #A9A9A9FF
+									arcWidth: 0
+									centralAngle: 360F
+									sectorRotation: 0F
+								}]
+							name: "closeBtn"
+							visible: true
+							width: 40
+							height: 40
+							x: 450
+							y: 10
+							fillColor: #DCDCDCFF
+							arcWidth: 0
+							centralAngle: 360F
+							sectorRotation: 0F
+						}]
+					name: "GameFrame"
+					visible: true
+					width: @6cc24569-13be-4101-991f-a4441cb7eaae (objectref<int>)
+					height: @4f1945d3-de12-40f5-8959-01246f9f8e46 (objectref<int>)
+					x: 0
+					y: 0
+				}]
+		}, 
+		GtfImage(2d6c1219-909a-4eb1-a28c-7c89e346f7c1)
+		{
+			features: feature_list [
+				ScaleMode(fc07b599-a206-446e-bf06-894f753351c5)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(5269339e-49f6-4e54-ac0e-fbf8c9646663)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "TitleTxt"
+					visible: true
+					width: width@2d6c1219-909a-4eb1-a28c-7c89e346f7c1 (propref<int>)
+					height: height@2d6c1219-909a-4eb1-a28c-7c89e346f7c1 (propref<int>)
+					x: 0
+					y: 0
+					text: "UnBlock the Block"
+					textColor: #000000FF
+					font: font_resource(72fbeae6-5ced-4188-835d-3d0159f5ff97)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "gameTitle"
+			visible: true
+			width: 350
+			height: 40
+			x: 75
+			y: 20
+			image: image_resource(d3019f8c-c633-4989-ad7a-6811a6cbc1cf)
+			{
+				file: "images\\header.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View 4"
+	visible: true
+	width: @6cc24569-13be-4101-991f-a4441cb7eaae (objectref<int>)
+	height: @4f1945d3-de12-40f5-8959-01246f9f8e46 (objectref<int>)
+	x: 0
+	y: 0
+}

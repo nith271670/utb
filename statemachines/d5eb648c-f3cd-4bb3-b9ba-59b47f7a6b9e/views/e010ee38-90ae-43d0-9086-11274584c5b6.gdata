@@ -1,0 +1,101 @@
+EBGUIDE 6.8.0.190612124148;
+
+GtfView(e010ee38-90ae-43d0-9086-11274584c5b6)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(68d6adfb-e62d-4f1c-984d-8219bdaf2e03)
+		{
+			features: feature_list [
+				ScaleMode(eebd76cf-be7e-407f-8144-3bd856f74367)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(ff95dd4d-f2e5-43aa-9e30-711fbe6f9c4a)
+				{
+					features: feature_list [
+						MultiLine(2b548295-4275-44be-94d4-c4a8b0867edc)
+						{
+							lineGap: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "GameOverTxt"
+					visible: true
+					width: 253
+					height: 120
+					x: 69
+					y: 15
+					text: "Great Job! \\n Game Over"
+					textColor: #000000FF
+					font: font_resource(4edb78da-ad92-47d1-a809-eda416022257)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(4e03602b-33ad-446c-902c-2448abdb4efc)
+				{
+					features: feature_list [
+						ScaleMode(ff763c82-9de3-41a8-b1b8-e9a10fb5a688)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(7b471b65-a702-418d-889f-0fdb921fb5fd)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(903064cd-e1d5-4122-ab10-71c43cde2334)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+									"	f:pushDynamicStateMachine(popup_stack:Main,sm:levelList,0)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(3c4b8f1a-4076-4488-a94e-4fc26d2aff3d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "selectLevel"
+					visible: true
+					width: 83
+					height: 75
+					x: 161
+					y: 139
+					image: image_resource(e9000ee1-01bb-4953-a468-a2490245f2ca)
+					{
+						file: "images\\level.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "bg"
+			visible: true
+			width: width@e010ee38-90ae-43d0-9086-11274584c5b6 (propref<int>)
+			height: height@e010ee38-90ae-43d0-9086-11274584c5b6 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(482ef3b6-6ed3-41bb-9d21-89cce936102a)
+			{
+				file: "images\\header.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "gameOver"
+	visible: true
+	width: @b371b46a-325d-41b1-9468-33baf2972ffb (objectref<int>)
+	height: @d1789b26-ab3f-44d6-ab00-f9eb769dd968 (objectref<int>)
+	x: 50
+	y: 150
+}
