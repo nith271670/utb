@@ -25,7 +25,7 @@ haptic_compound_state(4d255141-074f-4e8f-be95-5affdcfab0cd)
 			condition: function<bool>(none)
 			action: function<void>(none)
 			target_state: @efdb32e1-4aed-473f-864a-d644e621271e (objectref<haptic_dialog_state>)
-			source_dock: 0.2605733F
+			source_dock: 0.5550998F
 			target_dock: 0.9217954F
 		}]
 	internal_transitions: haptic_internal_transitions []

@@ -88,6 +88,15 @@ configuration_profile(b353c849-223f-4ce1-8f40-46ebcd0ba0ac)
 		"    }" \
 		"  }" \
 		"}"
-	model_configuration: "{}"
+	model_configuration: "{" \
+		"  \"gtf\": {" \
+		"    \"model\": {" \
+		"      \"pluginstoload\": [" \
+		"      	\"resources/plugins/gtf_plugin_extensions\"," \
+		"        \"resources/plugins/gtf_plugin_extensions_list\"" \
+		"      ]" \
+		"    }" \
+		"  }" \
+		"}"
 	additional_data: object(none)
 }

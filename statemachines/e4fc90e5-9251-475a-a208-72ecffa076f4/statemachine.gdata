@@ -29,8 +29,8 @@ haptic_statemachine(e4fc90e5-9251-475a-a208-72ecffa076f4)
 					condition: function<bool>(none)
 					action: function<void>(none)
 					target_state: @4d255141-074f-4e8f-be95-5affdcfab0cd (objectref<haptic_compound_state>)
-					source_dock: 0.1780375F
-					target_dock: 0.8644606F
+					source_dock: 0.1855595F
+					target_dock: 0.8128543F
 				}]
 			internal_transitions: haptic_internal_transitions [
 				haptic_internal_transition(0e67ebbf-1e04-4bac-8499-ebde2d6fb885)
@@ -52,8 +52,8 @@ haptic_statemachine(e4fc90e5-9251-475a-a208-72ecffa076f4)
 		(4d255141-074f-4e8f-be95-5affdcfab0cd), 
 		haptic_dialog_state(efdb32e1-4aed-473f-864a-d644e621271e)
 		{
-			x: 572
-			y: 195
+			x: 398
+			y: 186
 			width: 100
 			height: 100
 			name: "resetLevel"
@@ -72,8 +72,8 @@ haptic_statemachine(e4fc90e5-9251-475a-a208-72ecffa076f4)
 					condition: function<bool>(none)
 					action: function<void>(none)
 					target_state: @4d255141-074f-4e8f-be95-5affdcfab0cd (objectref<haptic_compound_state>)
-					source_dock: 0.2521407F
-					target_dock: 0.3304169F
+					source_dock: 0.08579652F
+					target_dock: 0.393894F
 				}]
 			internal_transitions: haptic_internal_transitions []
 			background_color: #6C6C6CFF

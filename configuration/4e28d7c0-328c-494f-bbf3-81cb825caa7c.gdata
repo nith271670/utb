@@ -100,9 +100,8 @@ configuration_profile(4e28d7c0-328c-494f-bbf3-81cb825caa7c)
 		"  \"gtf\": {" \
 		"    \"model\": {" \
 		"      \"pluginstoload\": [" \
-		"        \"resources/plugins/gtf_plugin_extensions\"," \
-		"        \"resources/plugins/gtf_plugin_extensions_list\"," \
-		"        \"resources/plugins/gtf_plugin_extensions_persistency\"" \
+		"      	\"resources/plugins/gtf_plugin_extensions\"," \
+		"        \"resources/plugins/gtf_plugin_extensions_list\"" \
 		"      ]" \
 		"    }" \
 		"  }" \
