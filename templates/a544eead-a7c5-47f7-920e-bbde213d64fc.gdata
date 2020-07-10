@@ -100,7 +100,7 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 						"}"
 				}
 				flickMaxTime: 400
-				flickMinLength: @4bd79608-a006-48a0-a903-35cd7bb5be65 (objectref<int>)
+				flickMinLength: 10
 			}]
 		children: children_list [
 			GtfImage(0512f66a-c810-4452-954f-aabee3fa4712)
@@ -234,7 +234,7 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 						end: 470
 						target: x@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
 					}]
-				name: "Animation 2"
+				name: "LevelComplete"
 				enabled: true
 				repeat: 1
 				alternating: false
@@ -330,9 +330,9 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"		if(v:temp_x != v:this.x || v:temp_y != v:this.y){" \
 					"			" \
 					"			f:trace_string(\"blcok moved\")" \
-					"			" \
-					"			if(v:this.moveDirection > 0)" \
-					"				dp:N_Moves += 1" \
+					"			v:this.blockMoved = true" \
+					"			//if(v:this.moveDirection > 0)" \
+					"			//	dp:N_Moves += 1" \
 					"				" \
 					"			v:index = v:this.columnNo + dp:GridSize * v:this.rowNo" \
 					"			" \
@@ -385,12 +385,18 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"			" \
 					"			if(v:this.TypeOfBlock == 0){" \
 					"				if(v:this.columnNo == 4 && v:this.rowNo == 2){" \
-					"					f:animation_play(v:this->\"Animation 2\")" \
+					"					f:animation_play(v:this->LevelComplete)" \
 					"					//fire_delayed 200, ev:levelComplete()" \
 					"				}" \
 					"			}" \
 					"		" \
 					"		" \
+					"		}" \
+					"		else{" \
+					"			if(v:this.blockMoved){" \
+					"				dp:N_Moves += 1" \
+					"				v:this.blockMoved = false" \
+					"			}" \
 					"		}" \
 					"	}" \
 					"" \
@@ -635,6 +641,7 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"}"
 			}
 		}
+		blockMoved: false
 	}
 	y: y@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
 	x: x@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
