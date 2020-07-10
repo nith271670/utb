@@ -40,7 +40,7 @@ GtfView(eb334ace-e017-408e-b23c-6e9123e1660e)
 									y: y@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									x: x@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
 									columnNo: 0
-									rowNo: rowNo@a544eead-a7c5-47f7-920e-bbde213d64fc (propref<int>)
+									rowNo: 0
 									buttonId: 1
 									LengthOfBlock: 0
 									TypeOfBlock: 2

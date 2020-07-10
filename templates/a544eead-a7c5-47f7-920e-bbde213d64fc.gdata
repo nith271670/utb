@@ -59,6 +59,47 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 				touched: false
 				touchPolicy: 0
 				touchBehavior: 0
+			}, 
+			Gestures(ff33310c-f343-4ab3-bfc2-5250830004bf)
+			{
+			}, 
+			GestureFlick(89701300-7a0a-4a90-8f87-fcfe8632d7a4)
+			{
+				onGestureFlick: function<void,float,int,int>(4745f3af-c444-450a-868f-17557a31ff17)
+				{
+					script: "function(v:speed::float, v:directionX::int, v:directionY::int)" \
+						"{" \
+						"	f:focusMoveTo(v:this)" \
+						"	f:trace_string(\"v:directionX:\"+ f:int2string(v:directionX))" \
+						"	f:trace_string(\"v:directionY:\"+ f:int2string(v:directionY))" \
+						"	if(v:this.TypeOfBlock == 0 || v:this.TypeOfBlock == 1){" \
+						"		if(f:abs(v:directionX) > f:abs(v:directionY)){" \
+						"			if(v:directionX < 0){" \
+						"				fire ev:moveLeft()" \
+						"			}" \
+						"			else{" \
+						"				fire ev:moveRight()" \
+						"			}" \
+						"		}" \
+						"			" \
+						"	}		" \
+						"	else if(v:this.TypeOfBlock == 2){" \
+						"		if(f:abs(v:directionX) < f:abs(v:directionY)){" \
+						"			if(v:directionY < 0){" \
+						"				fire ev:moveUp()" \
+						"			}" \
+						"			else{" \
+						"				fire ev:moveDown()" \
+						"			}" \
+						"		}" \
+						"		" \
+						"	}" \
+						"		" \
+						"		" \
+						"}"
+				}
+				flickMaxTime: 400
+				flickMinLength: @4bd79608-a006-48a0-a903-35cd7bb5be65 (objectref<int>)
 			}]
 		children: children_list [
 			GtfImage(0512f66a-c810-4452-954f-aabee3fa4712)
@@ -357,8 +398,8 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"}"
 			}
 		}
-		rowNo: 0
-		columnNo: 0
+		rowNo: -1
+		columnNo: -1
 		buttonId: 0
 		TypeOfBlock: 0
 		moveBlock: conditional_script(8f0c9041-185e-46f7-af92-5b10163d91b3)
@@ -411,16 +452,25 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"				if(dp:currentGrid[v:index] == true){" \
 					"					v:this.rowNo += 1					" \
 					"				}" \
+					"				else{" \
+					"					fire_delayed 100, ev:moveUp()" \
+					"				}" \
 					"			}" \
 					"			else if(v:this.moveDirection == 1){" \
 					"				if(v:this.LengthOfBlock == 0 && ((v:this.rowNo + 1) < dp:GridSize)){" \
 					"					if(dp:currentGrid[v:index + dp:GridSize] == true){" \
 					"						v:this.rowNo -= 1" \
 					"					}" \
+					"					else{" \
+					"						fire_delayed 100, ev:moveDown()" \
+					"					}" \
 					"				}" \
 					"				else if(v:this.LengthOfBlock == 1 && ((v:this.rowNo + 2) < dp:GridSize)){" \
 					"					if(dp:currentGrid[v:index + (dp:GridSize * 2)] == true){" \
 					"						v:this.rowNo -= 1" \
+					"					}" \
+					"					else{" \
+					"						fire_delayed 100, ev:moveDown()" \
 					"					}" \
 					"				}" \
 					"			}" \
@@ -428,16 +478,25 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"				if(dp:currentGrid[v:index] == true){" \
 					"					v:this.columnNo += 1" \
 					"				}" \
+					"				else{" \
+					"					fire_delayed 100, ev:moveLeft()" \
+					"				}" \
 					"			}" \
 					"			else if(v:this.moveDirection == 3){" \
 					"				if(v:this.LengthOfBlock == 0 && ((v:this.columnNo + 1) < dp:GridSize)){" \
 					"					if(dp:currentGrid[v:index + 1] == true){" \
 					"						v:this.columnNo -= 1" \
 					"					}" \
+					"					else{" \
+					"						fire_delayed 100, ev:moveRight()" \
+					"					}" \
 					"				}" \
 					"				else if(v:this.LengthOfBlock == 1 && ((v:this.columnNo + 2) < dp:GridSize)){" \
 					"					if(dp:currentGrid[v:index + 2] == true){" \
 					"						v:this.columnNo -= 1" \
+					"					}" \
+					"					else{" \
+					"						fire_delayed 100, ev:moveRight()" \
 					"					}" \
 					"				}" \
 					"			}				" \
@@ -537,6 +596,44 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 			}
 		}
 		moveDirection: -1
+		initializeGameBlock: conditional_script(deee1dc5-cf7c-4916-8890-013d8bdbd9aa)
+		{
+			triggerList: trigger_list(1e0d7c00-1da0-488d-85dc-450a5b609d18)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(035c4d02-f512-438e-b0da-2f34c357bd86)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:trace_string(\"initiallize Block\")" \
+					"	let v:index = 0" \
+					"	in" \
+					"	{" \
+					"		v:index = v:this.columnNo + dp:GridSize * v:this.rowNo" \
+					"		if(v:this.TypeOfBlock == 0 || (v:this.TypeOfBlock == 1 && v:this.LengthOfBlock == 0)){" \
+					"			dp:currentGrid[v:index] = true" \
+					"			dp:currentGrid[v:index + 1] = true				" \
+					"		}" \
+					"		else if(v:this.TypeOfBlock == 1 && v:this.LengthOfBlock != 0){" \
+					"			dp:currentGrid[v:index] = true" \
+					"			dp:currentGrid[v:index + 1] = true" \
+					"			dp:currentGrid[v:index + 2] = true" \
+					"		}" \
+					"		else if(v:this.TypeOfBlock == 2 && v:this.LengthOfBlock == 0){" \
+					"			dp:currentGrid[v:index] = true" \
+					"			dp:currentGrid[v:index + dp:GridSize] = true" \
+					"		}" \
+					"		else if(v:this.TypeOfBlock == 2 && v:this.LengthOfBlock != 0){" \
+					"			dp:currentGrid[v:index] = true" \
+					"			dp:currentGrid[v:index + dp:GridSize] = true" \
+					"			dp:currentGrid[v:index + dp:GridSize * 2] = true" \
+					"		}			" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
 	}
 	y: y@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
 	x: x@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
