@@ -70,8 +70,10 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					script: "function(v:speed::float, v:directionX::int, v:directionY::int)" \
 						"{" \
 						"	f:focusMoveTo(v:this)" \
+						"	" \
 						"	f:trace_string(\"v:directionX:\"+ f:int2string(v:directionX))" \
 						"	f:trace_string(\"v:directionY:\"+ f:int2string(v:directionY))" \
+						"	" \
 						"	if(v:this.TypeOfBlock == 0 || v:this.TypeOfBlock == 1){" \
 						"		if(f:abs(v:directionX) > f:abs(v:directionY)){" \
 						"			if(v:directionX < 0){" \
@@ -80,8 +82,7 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 						"			else{" \
 						"				fire ev:moveRight()" \
 						"			}" \
-						"		}" \
-						"			" \
+						"		}	" \
 						"	}		" \
 						"	else if(v:this.TypeOfBlock == 2){" \
 						"		if(f:abs(v:directionX) < f:abs(v:directionY)){" \
