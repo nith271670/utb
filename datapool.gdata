@@ -3,6 +3,11 @@ EBGUIDE 6.8.0.190612124148;
 dp_items(f2495cc9-6512-4cf8-8520-bd30d992dd23)
 {
 	items: dp_item_list [
+		dp<int>(08da2db9-6359-4050-bc54-63eb727f7d8f)
+		{
+			value: 0
+			name: "HorizontalAnim_blockX_EndVal"
+		}, 
 		dp<boollist>(0ca0b38d-60aa-483b-963e-a97db65e774f)
 		{
 			value: boollist []
@@ -50,6 +55,11 @@ dp_items(f2495cc9-6512-4cf8-8520-bd30d992dd23)
 			value: 600
 			name: "GameHeight"
 		}, 
+		dp<int>(5019edbd-629d-425a-b8b9-151c55372ba6)
+		{
+			value: 0
+			name: "VerticalAnim_blockY_StartVal"
+		}, 
 		dp<int>(5dd413eb-d5ad-47ca-8050-3c69616850c8)
 		{
 			value: 6
@@ -64,6 +74,11 @@ dp_items(f2495cc9-6512-4cf8-8520-bd30d992dd23)
 		{
 			value: -1
 			name: "dummy_dp"
+		}, 
+		dp<int>(8f57ec93-b7b0-4b76-af95-9caa1bbe90ca)
+		{
+			value: 0
+			name: "HorizontalAnim_blockX_StartVal"
 		}, 
 		dp<int>(a45b6de3-580e-4da0-bed4-80023bef42fb)
 		{
@@ -85,6 +100,11 @@ dp_items(f2495cc9-6512-4cf8-8520-bd30d992dd23)
 			value: 0
 			name: "NumLevels"
 		}, 
+		dp<bool>(ced5f814-ef7c-42ef-a6b8-e3f0c49d271c)
+		{
+			value: false
+			name: "moveBlockEventTriggered"
+		}, 
 		dp<int>(d1789b26-ab3f-44d6-ab00-f9eb769dd968)
 		{
 			value: 300
@@ -99,6 +119,11 @@ dp_items(f2495cc9-6512-4cf8-8520-bd30d992dd23)
 		{
 			value: intlist []
 			name: "currentBlockColumnList"
+		}, 
+		dp<int>(db9875fb-76f0-428b-a1ca-08845e56e30e)
+		{
+			value: 0
+			name: "VerticalAnim_blockY_EndVal"
 		}, 
 		dp<imagelist>(e630376e-b86f-4ba9-b897-52b6d3bd52ea)
 		{

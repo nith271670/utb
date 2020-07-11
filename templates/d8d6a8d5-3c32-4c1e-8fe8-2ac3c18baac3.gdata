@@ -62,6 +62,7 @@ GtfContainer_template(d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3)
 					"	f:ext_listClear(&dp:currentBlockRowList)" \
 					"	f:ext_listClear(&dp:currentBlockColumnList)" \
 					"	dp:N_Moves = 0" \
+					"	dp:moveBlockEventTriggered = false" \
 					"	let v:i = 0" \
 					"	in" \
 					"	{" \
@@ -70,8 +71,7 @@ GtfContainer_template(d8d6a8d5-3c32-4c1e-8fe8-2ac3c18baac3)
 					"			f:ext_listAppend_Bool(&dp:currentGrid,false)" \
 					"			v:i+=1" \
 					"		}" \
-					"		" \
-					"		f:trace_string(\"GameArea\")" \
+					"" \
 					"		dp:NumBlocks = f:ext_widgetGetVisibleChildCount(v:this)" \
 					"		v:i = 0" \
 					"		while( v:i < dp:NumBlocks) " \

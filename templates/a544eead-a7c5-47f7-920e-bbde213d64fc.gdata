@@ -71,9 +71,6 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 						"{" \
 						"	f:focusMoveTo(v:this)" \
 						"	" \
-						"	f:trace_string(\"v:directionX:\"+ f:int2string(v:directionX))" \
-						"	f:trace_string(\"v:directionY:\"+ f:int2string(v:directionY))" \
-						"	" \
 						"	if(v:this.TypeOfBlock == 0 || v:this.TypeOfBlock == 1){" \
 						"		if(f:abs(v:directionX) > f:abs(v:directionY)){" \
 						"			if(v:directionX < 0){" \
@@ -260,6 +257,67 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 						"	fire_delayed 500, ev:levelComplete()" \
 						"}"
 				}
+			}, 
+			GtfParallelAnimation(2b3eadca-fd76-4bb8-b425-3e0be741ab78)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(d9c27ab2-72a0-4b4f-9eda-3062a3903769)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "moveBlockHorizontally"
+						enabled: true
+						delay: 0
+						duration: 100
+						repeat: 1
+						alternating: false
+						relative: false
+						start: @8f57ec93-b7b0-4b76-af95-9caa1bbe90ca (objectref<int>)
+						end: @08da2db9-6359-4050-bc54-63eb727f7d8f (objectref<int>)
+						target: x@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
+					}, 
+					GtfLinearInterpolationS32(fc954718-f3ce-4292-9ffb-25e3ebdae980)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "moveBlockVertically"
+						enabled: true
+						delay: 0
+						duration: 100
+						repeat: 1
+						alternating: false
+						relative: false
+						start: @5019edbd-629d-425a-b8b9-151c55372ba6 (objectref<int>)
+						end: @db9875fb-76f0-428b-a1ca-08845e56e30e (objectref<int>)
+						target: y@76ccaeaf-f9c5-42d3-9f8e-d1c565f85e68 (propref<int>)
+					}]
+				name: "moveBlock"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(fcb84bce-bfac-4b5f-ac80-3048a49f0678)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(0b248f60-0a84-434d-aeb0-4e8ebfbb8973)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(42f9fcd4-f0b5-492b-aeb2-cc777eac879a)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
 			}]
 		name: "gameBlock"
 		visible: true
@@ -319,20 +377,33 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"{" \
 					"	let v:temp_x = v:this.x" \
 					"		v:temp_y = v:this.y" \
+					"		v:temp_x1 = dp:blockDimensions * v:this.columnNo" \
+					"		v:temp_y1 = dp:blockDimensions * v:this.rowNo" \
 					"		v:index = 0" \
 					"	in" \
 					"	{	" \
-					"		" \
-					"		" \
-					"		v:this.x = dp:blockDimensions * v:this.columnNo" \
-					"		v:this.y = dp:blockDimensions * v:this.rowNo" \
-					"		" \
-					"		if(v:temp_x != v:this.x || v:temp_y != v:this.y){" \
 					"			" \
-					"			f:trace_string(\"blcok moved\")" \
+					"		if(v:temp_x != v:temp_x1 || v:temp_y != v:temp_y1){" \
+					"			" \
+					"			dp:VerticalAnim_blockY_StartVal = v:temp_y" \
+					"			dp:VerticalAnim_blockY_EndVal = v:temp_y1" \
+					"			" \
+					"			dp:HorizontalAnim_blockX_StartVal = v:temp_x" \
+					"			dp:HorizontalAnim_blockX_EndVal = v:temp_x1" \
+					"			" \
+					"" \
+					"			if(dp:moveBlockEventTriggered){" \
+					"				dp:moveBlockEventTriggered = false" \
+					"				f:animation_play(v:this->moveBlock)" \
+					"				unit" \
+					"			}" \
+					"			else{" \
+					"				v:this.x = dp:blockDimensions * v:this.columnNo" \
+					"				v:this.y = dp:blockDimensions * v:this.rowNo" \
+					"			}" \
+					"			" \
+					"" \
 					"			v:this.blockMoved = true" \
-					"			//if(v:this.moveDirection > 0)" \
-					"			//	dp:N_Moves += 1" \
 					"				" \
 					"			v:index = v:this.columnNo + dp:GridSize * v:this.rowNo" \
 					"			" \
@@ -386,7 +457,6 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 					"			if(v:this.TypeOfBlock == 0){" \
 					"				if(v:this.columnNo == 4 && v:this.rowNo == 2){" \
 					"					f:animation_play(v:this->LevelComplete)" \
-					"					//fire_delayed 200, ev:levelComplete()" \
 					"				}" \
 					"			}" \
 					"		" \
@@ -423,6 +493,8 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 				script: "function(v:arg0::bool)" \
 					"{" \
 					"	if(v:this.focused){" \
+					"		" \
+					"		dp:moveBlockEventTriggered = true" \
 					"		" \
 					"		match_event v:event = ev:moveUp in" \
 					"		{" \
