@@ -96,7 +96,7 @@ GtfContainer_template(a544eead-a7c5-47f7-920e-bbde213d64fc)
 						"		" \
 						"}"
 				}
-				flickMaxTime: 400
+				flickMaxTime: 1000
 				flickMinLength: 10
 			}]
 		children: children_list [
